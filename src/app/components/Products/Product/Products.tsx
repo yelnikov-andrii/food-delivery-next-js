@@ -7,6 +7,8 @@ import { Product } from './Product';
 import { TypeList } from '../../UI/TypeList/TypeList';
 import { url } from '@/app/API';
 import { useRequest } from '@/app/hooks/useRequest';
+import { Loading } from '../../UI/Loading/Loading';
+import styles from './products.module.scss';
 
 interface Props {
   typeId: number;
@@ -124,18 +126,18 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
   return (
     <>
       <div>
-        <h1 className='main__header'>
+        <h1 className={styles.products__h1}>
           {name}
         </h1>
       </div>
       {loading && page === 1 ? (
         <div>
-          loading...
+          <Loading />
         </div>
       ) : (
         <>
           <div>
-            <div>
+            <div className={styles.products__searchWrapper}>
               <Search 
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}
@@ -144,31 +146,37 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
                 setSelectedOption={setSelectedOption}
               />
             </div>
-            <TypeList 
-              filterType={filterType} 
-              setFilterType={setFilterType} 
-              types={productCategories}
-              setPage={setPage}
-            />
+            <div className={styles.products__typesWrapper}>
+              <TypeList 
+                filterType={filterType} 
+                setFilterType={setFilterType} 
+                types={productCategories}
+                setPage={setPage}
+              />
+            </div>
             {sortedProducts.length !== 0 && (
-              <h4 className='products__count'>
+              <h4 className={styles.products__h4}>
                 Кількість продуктів: {appliedInput ? searchedProducts.length : totalCount}
               </h4>
             )}
           </div>
-          <div className='products'>
+          <div className={styles.products}>
             {sortedProducts.length === 0 ? (
-              <div className="products__notfound">
-                <h2>
+              <div>
+                <h2 className={styles.products__h2}>
                   Продукти не були знайдені
                 </h2>
               </div>
             ) : (
               sortedProducts && sortedProducts.map((product: any) => (
-                <Product 
-                  product={product} 
+                <div 
+                  className={styles.products__item}
                   key={product.id}
-                />
+                >
+                  <Product 
+                    product={product} 
+                  />
+                </div>
               ))
             )}
             {/* <UpButton /> */}
@@ -176,14 +184,16 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
           <div>
             {page !== 1 && loading ? (
               <div>
-                loading...
+                <Loading />
               </div>
             ) : (
               (currentPage ? (+currentPage !== countOfPages) : (1 !== countOfPages)) && (!searchInput) 
               && (
-                <LoadMore 
-                  loadmore={loadmore}
-                />
+                <div className={styles.products__loadMore}>
+                  <LoadMore 
+                    loadmore={loadmore}
+                  />
+                </div>
               )
             )}
           </div>

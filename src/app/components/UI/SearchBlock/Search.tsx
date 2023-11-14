@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { Select } from './Select';
+import styles from './search.module.scss';
 
-export const Search: React.FC <any> = ({ searchInput, setSearchInput, options, setSelectedOption, selectedOption }) => {
+interface Props {
+  searchInput: string;
+  setSearchInput: Dispatch<SetStateAction<string>>;
+  selectedOption: string;
+  setSelectedOption: Dispatch<SetStateAction<string>>;
+  options: string[];
+}
+
+export const Search: React.FC <Props> = ({ searchInput, setSearchInput, options, setSelectedOption, selectedOption }) => {
   return (
-    <div className='search'>
+    <div className={styles.search}>
       <input
-        className='search__input'
+        className={styles.search__input}
         placeholder='Знайти продукт'
         value={searchInput}
         onChange={(e) => {
           setSearchInput(e.target.value);
         }}
       />
-      <div className='search__select'>
+      <div className={styles.search__select}>
         <Select 
           options={options}
           defaultField="Сортувати по"

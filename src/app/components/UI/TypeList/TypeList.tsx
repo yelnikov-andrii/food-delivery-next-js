@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from './typelist.module.scss';
 
 export const TypeList: React.FC <any> = ({ setFilterType, filterType, types, setPage }) => {
   return (
     <div 
-      className='typeList'
+      className={styles.typelist}
     >
       {types.map((type: any) => (
         <div
@@ -12,7 +13,7 @@ export const TypeList: React.FC <any> = ({ setFilterType, filterType, types, set
             setFilterType(type);
             setPage(1);
           }}
-          // active={filterType === type ? true : false}
+          className={filterType !== type ? styles.typelist__item : styles.typelist__item + ' ' + styles['typelist__item--active']}
         >
           {type}
         </div>

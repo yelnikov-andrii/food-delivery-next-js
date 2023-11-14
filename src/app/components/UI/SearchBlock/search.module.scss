@@ -1,3 +1,35 @@
+.search {
+  display: flex;
+  margin: 0 0 20px 0;
+  justify-content: space-between;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;    
+  }
+
+  &__input {
+    width: 50%;
+    height: 40px;
+    border: 1px solid #055160;
+    color: #055160;
+    padding: 10px;
+    border-radius: 10px;
+
+    @media (max-width: 768px) {
+      width: 100%; 
+    }
+  }
+
+  &__select {
+    position: relative;
+
+    @media (max-width: 768px) {
+      width: 100%; 
+    }
+  }
+}
+
 .select {
   position: relative;
   font-size: 16px;
@@ -33,7 +65,7 @@
       top: 50%;
       right: 10px;
       transform: translateY(-50%);
-      background-image: url('../../../images/change.svg');
+      background-image: url('../../../../../public/change.svg');
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
@@ -44,17 +76,17 @@
 
   &__dropdown {
     position: absolute;
-  top: 100%;
-  left: -25%;
-  width: 184px; 
-  max-height: 250px;
-  padding: 0;
-  margin-top: 14px;
-  list-style-type: none;
-  border-radius: 8px;
-  border: 1px solid #000;
-  background: #FCFCFC;
-  z-index: 3;
+    top: 100%;
+    left: -25%;
+    width: 184px; 
+    max-height: 250px;
+    padding: 0;
+    margin-top: 14px;
+    list-style-type: none;
+    border-radius: 8px;
+    border: 1px solid #000;
+    background: #FCFCFC;
+    z-index: 3;
 
   @media screen and (max-width: 768px) {
     left: 0;
@@ -64,9 +96,9 @@
 
   &__dropdownItem {
     display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  cursor: pointer;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
 
   &:hover {
     background-color: #F4F5FD;

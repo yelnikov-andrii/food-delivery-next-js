@@ -33,7 +33,7 @@ export const Product: React.FC <Props> = ({ product, link }) => {
           alt='product'
           className={styles.product__img}
           layout="responsive"
-          width={50}
+          width={100}
           height={100}
         />
       </Link>

@@ -1,4 +1,6 @@
+'use client';
 import React from 'react';
+import styles from './search.module.scss';
 
 export const Select: React.FC <any> = ({ options, defaultField, setSelectedOption, selectedOption }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -13,7 +15,7 @@ export const Select: React.FC <any> = ({ options, defaultField, setSelectedOptio
   };
 
   const handleClickOutside = (e: any) => {
-    if (!e.target.closest('.select')) {
+    if (!e.target.closest('#select')) {
       setIsOpen(false);
     }
   };
@@ -26,21 +28,26 @@ export const Select: React.FC <any> = ({ options, defaultField, setSelectedOptio
     };
   }, []);
 
+  console.log(isOpen);
+
   return (
-    <div className='select'>
+    <div 
+      className={styles.select}
+      id="select"
+    >
       <button 
         onClick={toggleDropdown} 
-        className='select__button'
+        className={styles.select__button}
       >
         {!selectedOption ? defaultField : selectedOption}
       </button>
       {isOpen && (
-        <ul className='select__dropdown'>
+        <ul className={styles.select__dropdown}>
           {options.map((option: string) => (
             <li 
               key={option} 
               onClick={() => handleOptionSelect(option)}
-              className='select__dropdownItem'
+              className={styles.select__dropdownItem}
             >
               {option}
             </li>
