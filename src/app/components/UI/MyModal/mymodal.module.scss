@@ -1,0 +1,24 @@
+.mymodal {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__hidden {
+    display: none;
+  }
+
+  &__content {
+    background: white;
+    padding: 25px;
+    max-width: 500px;
+    border-radius: 16px;
+    width: 100%;
+  }
+}

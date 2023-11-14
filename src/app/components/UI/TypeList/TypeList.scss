@@ -1,0 +1,9 @@
+.list-group {
+  &.typeList {
+    margin-bottom: 50px;
+    
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../scss/vars.scss';
+
+.categories {
+    margin-bottom: 50px;
+
+  &__nav {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+
+    @media (max-width: 575px) {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+}
+  }
+
+  &__link {
+      font-size: 16px;
+      text-decoration: none;
+      display: flex;
+      padding: 5px 10px;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      width: 100%;
+      border: 1px solid teal;
+      height: 50px;
+      color: $primaryColor;
+      background: $secondaryColor;
+      max-width: 140px;
+  
+      &:hover {
+        color: yellow;
+      }
+
+      &:hover {
+        outline: 3px solid teal;
+      }
+  }
+}

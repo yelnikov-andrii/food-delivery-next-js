@@ -1,0 +1,47 @@
+@import '../../scss/vars.scss';
+
+.modalCallback {
+  width: 100%;
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__formRow {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+
+  &__input {
+    height: 40px;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid teal;
+    outline: none;
+  }
+
+  &__button {
+    width: 100%;
+    border: 1px solid teal;
+    height: 50px;
+    color: $primaryColor;
+    background: $secondaryColor;
+    cursor: pointer;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+}

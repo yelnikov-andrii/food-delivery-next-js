@@ -1,0 +1,49 @@
+@import '../../../scss//vars.scss';
+
+.dropdown {
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 5px;
+  color: $primaryColor;
+  border: 1px solid teal;
+  background: $secondaryColor;
+
+  &__button {
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primaryColor;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+
+  &__content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 10px);
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 8px;
+  z-index: 999;
+  background-color: $secondaryColor;
+  width: 100%;
+  min-width: 140px;
+
+  &--hidden {
+    display: none;
+  }
+  }
+}
