@@ -1,0 +1,37 @@
+.products {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+
+  &__h1 {
+    margin: 0 0 20px 0;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  &__h4 {
+    margin: 0 0 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  &__item {
+    width: calc((100% - 40px) / 3);
+  }
+
+  &__typesWrapper {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  &__searchWrapper {
+    margin: 0 0 20px 0;
+  }
+
+  &__loadMore {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 20px 0;
+  }
+}

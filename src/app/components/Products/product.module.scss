@@ -1,0 +1,133 @@
+@import '../../scss/vars.scss';
+
+.product {
+  width: 100%;
+  margin-bottom: 50px;
+  box-sizing: border-box;
+  min-width: 280px;
+  max-width: 380px;
+  border: 1px solid teal;
+  padding: 10px 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: 992px) {
+      width: 100%;
+      max-width: unset;     
+  }
+
+  &__mainInfo {
+    width: 100%;
+  }
+
+  &__img {
+    width: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__name {
+    color: $primaryColor;
+
+    &:hover {
+      color: yellow;
+    
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+
+  &__dropdownWrapper {
+    margin: 0 0 20px 0;
+  }
+
+  &__components {
+    width: 100%;
+    min-width: 280px;
+    max-width: 380px;
+    box-sizing: border-box;
+  }
+
+  &__buttonsWrapper {
+    margin: 0 0 10px 0;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__button {
+    font-size: 16px;
+    font-weight: 600;
+    color: $primaryColor;
+    background: $secondaryColor;
+    border: 1px solid teal;
+    height: 40px;
+    min-width: 160px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+      color: yellow;
+      background: $secondaryColor;
+      border: 1px solid teal;
+    }
+
+    &--active {
+      background: yellow;
+      border: none;
+      color: #333;
+
+      &:hover {
+        background: yellow;
+        border: none;
+        color: #333;
+      }
+    }
+  }
+
+  &__buttonAdd {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    background: $secondaryColor;
+    border: 1px solid teal;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  &__txtStrong {
+    font-weight: 700; 
+    margin-right: 5px;
+    font-size: 16px;
+  }
+
+  &__txt {
+    font-size: 12px;
+  }
+
+  &__price {
+    font-size: 20px;
+  }
+
+  &__alert {
+    margin-top: 10px;
+    border: 1px solid teal;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
