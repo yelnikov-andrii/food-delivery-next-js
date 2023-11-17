@@ -1,7 +1,7 @@
 import React from 'react';
-import { ContactsBlockItem } from './ContactBlockItem';
 import { contactsArr } from '@/app/data/contactsData';
 import styles from './contacts.module.scss';
+import { ContactsBlockItem } from './contactBlockItem';
 
 export const ContactsBlock = () => {
   return (

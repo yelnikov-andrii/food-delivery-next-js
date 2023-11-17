@@ -1,6 +1,6 @@
-import React from 'react'
-import { blogArr } from '../data/blogData'
-import BlogArticle from '../components/blog/blogArticle'
+import React from 'react';
+import { blogArr } from '../data/blogData';
+import BlogArticle from '../components/blog/blogArticle';
 
 export default function page() {
   return (

@@ -1,4 +1,4 @@
-import { ActivationPageWrapper } from '@/app/components/activation/activationPageWrapper';
+import { ActivationPageWrapper } from '@/app/components/activation/activationwrapper';
 import React from 'react';
 
 export default function Activation ({ params: {
