@@ -1,6 +1,6 @@
 import React from 'react';
-import { LoginBlockWrapper } from '../components/Login/LoginBlockWrapper';
 import styles from './page.module.scss';
+import { LoginBlockWrapper } from '../components/login/loginBlockWrapper';
 
 export default function Login() {
   return (

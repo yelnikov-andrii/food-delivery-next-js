@@ -1,30 +1,6 @@
 'use client'
 import React from 'react';
 
-
-// const StyledAbout = styled.div`
-//   padding: 50px 0;
-//   width: 100%;
-// `;
-
-// const Title = styled.h1`
-//   font-size: 48px;
-//   font-weight: 900;
-//   text-align: center;
-//   margin: 0 0 20px 0;
-// `;
-
-// const Block = styled.div`
-//   display: flex;
-//   justify-content: center;
-// `;
-
-// const Txt = styled.p`
-//   width: 70%;
-//   font-size: 16px;
-//   line-height: 2;
-// `;
-
 export default function About() {
   return (
     <div>

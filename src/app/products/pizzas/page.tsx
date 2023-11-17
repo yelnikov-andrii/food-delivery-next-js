@@ -1,5 +1,5 @@
-import { Products } from '@/app/components/products/Products'
-import React from 'react'
+import { Products } from '@/app/components/products/products';
+import React from 'react';
 
 export default function Pizzas() {
   return (
