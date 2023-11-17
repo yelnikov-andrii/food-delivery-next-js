@@ -5,8 +5,10 @@ export const useAddProduct = (
   product: any, selectedSize: any, selectedSouse: any, showAlert: any, 
   productsInCart: any, quantity: any, card: boolean) => {
   const dispatch = useDispatch();
+
   function add() {
     const copyProduct = JSON.parse(JSON.stringify(product));
+
     if (product.sizes) {
       copyProduct.selectedSize = selectedSize;
     }
@@ -26,6 +28,7 @@ export const useAddProduct = (
     copyProduct.quantity = quantity || 1;
 
     showAlert();
+    
     if (productsInCart.some((pizza: any) => pizza.id === copyProduct.id)) {
       if (!card) {
         dispatch(increment(copyProduct.id));
@@ -38,5 +41,6 @@ export const useAddProduct = (
       dispatch(addProduct(copyProduct));
     }
   }
+
   return { add };;
 };
