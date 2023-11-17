@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import getProductsByCategory from './lib/getProductsByCategory';
-import Categories from './components/Main/Categories';
 import { categoriesArr } from './data/footerData';
-import { MainProduct } from './components/Main/MainProduct';
-import { Product } from './components/Products/Product';
+import Categories from './components/main/Categories';
+import { MainProduct } from './components/main/MainProduct';
+import { Product } from './components/products/Product';
 
 export default async function Home() {
   const pizzas = await getProductsByCategory(1);
