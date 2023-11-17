@@ -7,11 +7,11 @@ import { NavLink } from '@/app/types';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Dropdown from '../UI/MyDropdown/Dropdown';
 import styles from './headernav.module.scss';
-import { useGetCountOfProducts } from '../../hooks/useGetCountOfProducts';
 import { getProducts } from '@/app/redux/slices/productSlice';
-import { useCheckAuth } from '@/app/API/services/auth/useCheckAuth';
+import { useGetCountOfProducts } from '@/app/hooks/useGetCountOfProducts';
+import { useCheckAuth } from '@/app/api/services/auth/useCheckAuth';
+import Dropdown from '../../components/ui/myDropdown/dropdown';
 
 interface Props {
   setShow: Dispatch<SetStateAction<boolean>>
