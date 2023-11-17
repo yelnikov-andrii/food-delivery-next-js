@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Select } from './Select';
+import { Select } from './select';
 import styles from './search.module.scss';
 
 interface Props {
