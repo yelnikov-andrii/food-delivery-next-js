@@ -1,4 +1,4 @@
-import { Products } from '@/app/components/Products/Product/Products';
+import { Products } from '@/app/components/products/Products'
 import React from 'react'
 
 export default function Sushi() {
