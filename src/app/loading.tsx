@@ -1,5 +1,5 @@
 import React from 'react'
-import { Loading } from '../components/uI/loading/loading';
+import { Loading } from '../components/ui/loading/loading';
 
 export default function PageLoading() {
   return (
