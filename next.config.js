@@ -15,6 +15,11 @@ module.exports = {
       {
         protocol: 'https',
         hostname: 'pizzalife.ua',
+        pathname: '/templates/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pizzalife.ua',
         pathname: '/assets/**',
       },
     ],

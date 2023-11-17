@@ -1,48 +1,8 @@
 @import '../../../scss/vars.scss';
 
 .product {
-  width: 100%;
-  margin-bottom: 50px;
-  box-sizing: border-box;
-  min-width: 280px;
-  max-width: 380px;
-  border: 1px solid teal;
-  padding: 10px 20px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  @media (max-width: 992px) {
-      width: 100%;
-      max-width: unset;     
-  }
-
-  &__mainInfo {
-    width: 100%;
-  }
-
-  &__img {
-    width: 100%;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  &__name {
-    color: $primaryColor;
-
-    &:hover {
-      color: yellow;
-    
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
-
-  &__dropdownWrapper {
-    margin: 0 0 20px 0;
+  &__buttonsWrapper {
+    margin: 0 0 10px 0;
   }
 
   &__components {
@@ -52,8 +12,13 @@
     box-sizing: border-box;
   }
 
-  &__buttonsWrapper {
-    margin: 0 0 10px 0;
+  &__mainInfo {
+    width: 60%;
+    margin: 0 0 20px 0;
+  }
+
+  &__additionalInfo {
+    width: 60%;
   }
 
   &__buttons {
@@ -128,6 +93,42 @@
 
     &--hidden {
       display: none;
+    }
+  }
+
+  &__counter {
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    width: 70px;
+    height: 60px;
+    background: #F1F1F2;
+    border: none;
+    text-indent: 5px;
+
+    &:focus-visible {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &__buttonCounter {
+    background: #F1F1F2;
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+
+    &--toCart {
+      width: 180px;
+      height: 60px;
+      margin-left: 20px;
+      font-weight: 700;
+      font-size: 18px;
+      cursor: pointer;
     }
   }
 }

@@ -11,6 +11,7 @@ export default function Header() {
   const [show, setShow] = React.useState(false);
 
   return (
+    <Provider store={store}>
       <header className={styles.header}>
       <div className={styles.header__block}>
         <Link
@@ -33,5 +34,6 @@ export default function Header() {
         />
       </div>
     </header>
+    </Provider>
   );
 };

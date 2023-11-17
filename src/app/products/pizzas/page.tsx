@@ -1,4 +1,4 @@
-import { Products } from '@/app/components/Products/Product/Products'
+import { Products } from '@/app/components/Products/Products'
 import React from 'react'
 
 export default function Pizzas() {

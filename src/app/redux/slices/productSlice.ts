@@ -11,6 +11,8 @@ export const productsSlice: any = createSlice({
     },
     addProduct: (state, action: any) => {
       state.products.push(action.payload);
+      localStorage.setItem('productsInCart', state.products);
+      console.log('product added');
     },
     increment: (state, action: any) => {
       const foundProduct = state.products.find((el: any) => el.id === action.payload);

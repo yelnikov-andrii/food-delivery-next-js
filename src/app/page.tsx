@@ -3,7 +3,7 @@ import getProductsByCategory from './lib/getProductsByCategory';
 import Categories from './components/Main/Categories';
 import { categoriesArr } from './data/footerData';
 import { MainProduct } from './components/Main/MainProduct';
-import { Product } from './components/Products/Product/Product';
+import { Product } from './components/Products/Product';
 
 export default async function Home() {
   const pizzas = await getProductsByCategory(1);
@@ -27,7 +27,7 @@ export default async function Home() {
             <Product 
               product={pizza} 
               key={pizza.id}
-              link={`/pizzas/${pizza.id}`}
+              link={`/products/${pizza.id}`}
             />
           ))}
         </MainProduct>
@@ -39,7 +39,7 @@ export default async function Home() {
               <Product 
                 product={sushiItem} 
                 key={sushiItem.id}
-                link={`/sushi/${sushiItem.id}`}
+                link={`/products/${sushiItem.id}`}
               />
             ))}
           </MainProduct>
@@ -51,7 +51,7 @@ export default async function Home() {
               <Product 
                 product={shaurmaItem} 
                 key={shaurmaItem.id}
-                link={`/shaurma/${shaurmaItem.id}`}
+                link={`/products/${shaurmaItem.id}`}
               />
             ))}
           </MainProduct>
@@ -63,7 +63,7 @@ export default async function Home() {
               <Product 
                 product={salad} 
                 key={salad.id}
-                link={`/salads/${salad.id}`}
+                link={`/products/${salad.id}`}
               />
             ))}
           </MainProduct>
@@ -75,7 +75,7 @@ export default async function Home() {
               <Product 
                 product={snack} 
                 key={snack.id}
-                link={`/snacks/${snack.id}`}
+                link={`/products/${snack.id}`}
               />
             ))}
           </MainProduct>
@@ -87,7 +87,7 @@ export default async function Home() {
               <Product 
                 product={mangalItem} 
                 key={mangalItem.id}
-                link={`/mangal/${mangalItem.id}`}
+                link={`/products/${mangalItem.id}`}
               />
             ))}
           </MainProduct>
@@ -99,7 +99,7 @@ export default async function Home() {
               <Product 
                 product={soupe} 
                 key={soupe.id}
-                link={`/soupes/${soupe.id}`}
+                link={`/products/${soupe.id}`}
               />
             ))}
           </MainProduct>

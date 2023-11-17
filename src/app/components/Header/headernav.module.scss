@@ -41,16 +41,17 @@
 
   &__cart {
     position: relative;
+    padding: 0 20px 0 0;
 
-    &-count {
+    &--count {
       width: 20px;
       height: 20px;
       border-radius: 50%;
       color: #000;
       background-color: #ffc107;
       position: absolute;
-      top: 0px;
-      right: -10px;
+      top: -10px;
+      right: 0px;
       display: flex;
       justify-content: center;
       align-items: center;

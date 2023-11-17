@@ -37,9 +37,11 @@ export interface UserAuth {
   password: string;
 }
 
-export interface Product {
+export interface ProductInt {
   name: string;
   id: number;
+  prices?: number[];
+  price?: number;
 }
 
 export interface PlaceInterface {
