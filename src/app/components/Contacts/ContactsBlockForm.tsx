@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import { ContactsForm } from './ContactsForm';
 import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
 import styles from './contacts.module.scss';
+import { ContactsForm } from './contactsForm';
 
 export const ContactsBlockForm: React.FC = () => {
   const [formSubmitted, setFormSubmitted]: any = useChangeBooleanWithTimeSpan(false, false, 3000);
