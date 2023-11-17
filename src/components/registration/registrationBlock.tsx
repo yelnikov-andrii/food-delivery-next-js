@@ -1,12 +1,12 @@
 'use client';
 import React from 'react';
-import { RegistrationSuccess } from './RegistrationSuccess';
-import { RegistrationEmail } from './RegistrationEmail';
-import { RegistrationPassword } from './RegistrationPassword';
-import { RegistrationConfirmPassword } from './RegistrationConfirmPassword';
-import { useCheckPasswords } from '../../hooks/useCheckPasswords';
+import { RegistrationSuccess } from './registrationSuccess';
+import { RegistrationEmail } from './registrationEmail';
+import { RegistrationPassword } from './registrationPassword';
+import { RegistrationConfirmPassword } from './registrationConfirmPassword';
+import { useCheckPasswords } from '../../app/hooks/useCheckPasswords';
 import { usePasswordHandler } from '@/app/hooks/usePasswordHandler';
-import { useRegister } from '@/app/API/services/auth/useRegister';
+import { useRegister } from '@/app/../api/services/auth/useRegister';
 import styles from './registration.module.scss';
 
 export const RegistrationBlock = () => {

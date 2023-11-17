@@ -2,7 +2,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Product } from './product';
-import { url } from '@/app/api';
+import { url } from '../../api';
 import { useRequest } from '@/app/hooks/useRequest';
 import styles from './products.module.scss';
 import { Loading } from '../ui/loading/loading';
