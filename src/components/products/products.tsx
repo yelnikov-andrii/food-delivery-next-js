@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
 import axios from 'axios';
-import { Product } from './Product';
-import { url } from '@/app/API';
+import { Product } from './product';
+import { url } from '@/app/api';
 import { useRequest } from '@/app/hooks/useRequest';
 import styles from './products.module.scss';
-import { Loading } from '../UI/Loading/Loading';
-import { Search } from '../UI/SearchBlock/Search';
-import { TypeList } from '../UI/TypeList/TypeList';
-import { LoadMore } from '../UI/LoadMore/LoadMore';
+import { Loading } from '../ui/loading/loading';
+import { Search } from '../ui/searchBlock/search';
+import { TypeList } from '../ui/typeList/typeList';
+import { LoadMore } from '../ui/loadMore/loadMore';
 
 interface Props {
   typeId: number;

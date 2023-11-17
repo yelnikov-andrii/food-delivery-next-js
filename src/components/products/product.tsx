@@ -1,10 +1,10 @@
 'use client';
 import React  from 'react';
-import { ProductMainInfo } from './ProductMainInfo';
-import { ProductWeightOrCount } from './ProductWeightOrCount';
-import { ProductSizes } from './ProductSizes';
-import { ProductSouses } from './ProductSouses';
-import { ProductButtonAdd } from './ProductButtonAdd';
+import { ProductMainInfo } from './productMainInfo';
+import { ProductWeightOrCount } from './productWeightOrCount';
+import { ProductSizes } from './productSizes';
+import { ProductSouses } from './productSouses';
+import { ProductButtonAdd } from './productButtonAdd';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useAlert } from '@/app/hooks/useAlert';

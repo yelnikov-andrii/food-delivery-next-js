@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from './product.module.scss';
-import Dropdown from '../../UI/MyDropdown/Dropdown';
+import Dropdown from '../../ui/myDropdown/dropdown';
 
 export const ProductCardMainInfo: React.FC <any> = ({product}) => {
   return (

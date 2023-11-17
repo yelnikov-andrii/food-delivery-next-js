@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './product.module.scss';
-import Dropdown from '../UI/MyDropdown/Dropdown';
+import Dropdown from '../../components/ui/myDropdown/dropdown';
 
 export const ProductMainInfo: React.FC <any> = ({ product }) => {
   return (

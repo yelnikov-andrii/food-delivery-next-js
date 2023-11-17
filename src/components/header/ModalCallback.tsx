@@ -1,9 +1,9 @@
 "use client";
-import { url } from '@/app/API';
+import { url } from '../../app/api';
 import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
 import { useSendData } from '@/app/hooks/useSendData';
 import React from 'react'
-import { MyModal } from '../UI/MyModal/MyModal';
+import { MyModal } from '../../components/ui/myModal/myModal';
 import styles from './modalCallback.module.scss';
 
 export default function ModalCallback({ setShow, show }: any) {
