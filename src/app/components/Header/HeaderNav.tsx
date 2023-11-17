@@ -39,7 +39,9 @@ export const HeaderNav: React.FC <Props> = ({ setShow }) => {
   }, []);
 
   React.useEffect(() => {
-    localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    if (productsInCart.length) {
+      localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
+    }
   }, [productsInCart]);
 
   return (
