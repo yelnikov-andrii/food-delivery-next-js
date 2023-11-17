@@ -1,5 +1,5 @@
 "use client";
-import { url } from '../../app/api';
+import { url } from '../../api';
 import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
 import { useSendData } from '@/app/hooks/useSendData';
 import React from 'react'

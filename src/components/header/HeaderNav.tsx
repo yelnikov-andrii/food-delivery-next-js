@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './headernav.module.scss';
 import { getProducts } from '@/app/redux/slices/productSlice';
 import { useGetCountOfProducts } from '@/app/hooks/useGetCountOfProducts';
-import { useCheckAuth } from '@/app/api/services/auth/useCheckAuth';
+import { useCheckAuth } from '../../api/services/auth/useCheckAuth';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
 
 interface Props {

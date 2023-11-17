@@ -1,11 +1,11 @@
 'use client';
 import React from 'react'
-import { ProductCardSizes } from './ProductCardSizes'
-import { ProductCardSouses } from './ProductCardSouses'
-import { ProductCardWeightAndCount } from './ProductCardWeightAndCount'
+import { ProductCardSizes } from './productCardSizes'
+import { ProductCardSouses } from './productCardSouses'
+import { ProductCardWeightAndCount } from './productCardWeightAndCount'
 import { ProductInt } from '@/app/types'
-import { ProductPrices } from './ProductPrices'
-import { ProductCardCounter } from './ProductCardCounter'
+import { ProductPrices } from './productPrices'
+import { ProductCardCounter } from './productCardCounter'
 import { useAlert } from '@/app/hooks/useAlert'
 import { Provider } from 'react-redux';
 import { store } from '@/app/redux/store';
