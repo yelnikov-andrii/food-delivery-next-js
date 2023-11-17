@@ -1,7 +1,7 @@
 import React from 'react';
-import { CartTableBody } from './CartTableBody';
-import { CartTableHead } from './CartTableHead';
 import styles from './cart.module.scss';
+import { CartTableBody } from './cartTableBody';
+import { CartTableHead } from './cartTableHead';
 
 export const CartTable: React.FC = () => {
   return (

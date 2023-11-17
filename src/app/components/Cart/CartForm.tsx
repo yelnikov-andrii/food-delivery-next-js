@@ -1,11 +1,11 @@
 import React, {Dispatch, SetStateAction} from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { url } from '../../API';
 import { useNormalizeProducts } from '../../hooks/useNormalizeProducts';
 import { useSendData } from '../../hooks/useSendData';
 import styles from './cart.module.scss';
 import { clearCart } from '@/app/redux/slices/productSlice';
+import { url } from '@/app/api';
 
 interface Props {
   setFilled: Dispatch<SetStateAction<boolean>>;

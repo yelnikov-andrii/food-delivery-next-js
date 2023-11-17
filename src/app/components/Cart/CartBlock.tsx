@@ -2,12 +2,12 @@
 import { useGetSum } from '@/app/hooks/useGetSum';
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { CartEmpty } from './CartEmpty';
-import { CartTable } from './CartTable';
-import { CartForm } from './CartForm';
-import { CartAfterFilledForm } from './CartAfterFilledForm';
 import styles from './cart.module.scss';
 import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
+import { CartEmpty } from './cartEmpty';
+import { CartTable } from './cartTable';
+import { CartForm } from './cartForm';
+import { CartAfterFilledForm } from './cartAfterFilledForm';
 
 export const CartBlock = () => {
   const productsInCart = useSelector((state: any) => state.product.products);

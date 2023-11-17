@@ -1,9 +1,9 @@
 'use client';
 import React, {Dispatch, SetStateAction} from 'react';
 import { useSendData } from '../../hooks/useSendData';
-import { url } from '../../API';
 import { useEmailHandler } from '@/app/hooks/useEmailHandler';
 import styles from './contacts.module.scss';
+import { url } from '@/app/api';
 
 interface Props {
   setFormIsSubmitted: Dispatch<SetStateAction<boolean>>;

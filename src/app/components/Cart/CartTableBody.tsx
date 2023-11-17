@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { CartTableCounter } from './CartTableCounter';
 import styles from './cart.module.scss';
 import Image from 'next/image';
 import { removeProduct } from '@/app/redux/slices/productSlice';
+import { CartTableCounter } from './cartTableCounter';
 
 export const CartTableBody = () => {
   const productsInCart = useSelector((state: any) => state.product.products);
