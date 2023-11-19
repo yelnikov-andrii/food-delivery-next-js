@@ -1,11 +1,11 @@
 'use client';
-import { url } from '../../../API/index';
 import React from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { UserAuth } from '@/app/types';
 import { setUser } from '@/app/redux/slices/authSlice';
 import { useRouter } from 'next/navigation';
+import { url } from '@/api';
 
 export const useLogin = ({email, password}: UserAuth) => {
   const [error, setError] = React.useState('');

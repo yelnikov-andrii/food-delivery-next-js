@@ -1,7 +1,7 @@
 import { url } from '../../index';
 import React from 'react';
 import axios from 'axios';
-import { UserAuth } from '../../../types/types';
+import { UserAuth } from '@/app/types';
 
 export const useRegister = (onSuccess: () => void) => {
   const [emailErrorRequest, setEmailErrorRequest] = React.useState('');
