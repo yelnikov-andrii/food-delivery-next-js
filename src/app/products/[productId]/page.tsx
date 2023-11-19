@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import getProductById from '@/app/lib/getProductById';
 import styles from './page.module.scss';
-import { ProductCardMainInfo } from '@/app/components/products/product/productCardMainInfo';
-import { ProductAdditionalInfo } from '@/app/components/products/product/productAdditionalInfo';
+import { ProductCardMainInfo } from '../../../components/products/product/productCardMainInfo';
+import { ProductAdditionalInfo } from '../../../components/products/product/productAdditionalInfo';
 
 export default async function ProductItem({
   params: { productId },

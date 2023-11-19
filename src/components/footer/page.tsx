@@ -1,8 +1,8 @@
 import React from 'react'
-import FooterList from './FooterList'
+import FooterList from './footerList'
 import { categoriesArr, infoArr } from '@/app/data/footerData'
 import FooterListContacts from './FooterListContacts'
-import FooterListIcons from './FooterListIcons';
+import FooterListIcons from './footerListIcons';
 import styles from './page.module.scss';
 
 export default function Footer() {
