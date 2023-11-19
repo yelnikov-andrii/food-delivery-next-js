@@ -1,5 +1,4 @@
 import axios from 'axios'
-import React from 'react'
 import { url } from '../../api';
 
 export default async function getProductsByCategory(typeId: number) {
