@@ -18,12 +18,16 @@ interface Props {
 }
 
 export const HeaderNav: React.FC <Props> = ({ setShow }) => {
-  const accessToken = localStorage.getItem('accessToken');
   // const user = useSelector((state: any) => state.auth.user);
   const handleShow = () => setShow(true);
   const countOfProducts = useGetCountOfProducts();
+  let accessToken = null;
 
   // const { logout } = useLogout();
+
+  React.useEffect(() => {
+    accessToken = localStorage.getItem('accessToken');
+  }, [])
 
   const productsInCart = useSelector((state: any) => state.product.products);
   const dispatch = useDispatch();
