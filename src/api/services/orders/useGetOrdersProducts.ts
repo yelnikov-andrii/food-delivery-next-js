@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import { url } from '@/api';
+import { useRequest } from '@/app/hooks/useRequest';
+import { ProductInt } from '@/app/types';
 import axios from 'axios';
 import React from 'react';
-import { useRequest } from '../../../hooks/useRequest';
-import { url } from '../../../API/index';
-import { Product } from '../../../types/types';
 
 interface Order {
   id: string;
@@ -12,7 +12,7 @@ interface Order {
 
 export const useGetOrdersProducts = (order: Order) => {
   const [initialProducts, setInitialProducts] = React.useState<any[]>([]);
-  const [products, setProducts] = React.useState<Product[]>([]);
+  const [products, setProducts] = React.useState<ProductInt[]>([]);
 
   async function getProduct(id: number) {
     return axios.get(`${url}/products/${id}`)
@@ -21,7 +21,7 @@ export const useGetOrdersProducts = (order: Order) => {
 
   React.useEffect(() => {
     if (order) {
-      const productsInCart = JSON.parse(order.products).map((product: Product) => product);
+      const productsInCart = JSON.parse(order.products).map((product: ProductInt) => product);
       setInitialProducts(productsInCart);
       const produtPromises = JSON.parse(order.products).map((product: any) => {
         if (typeof(product.id) === 'string' && product.id.indexOf('s')) {

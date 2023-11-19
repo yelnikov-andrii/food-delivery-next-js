@@ -1,15 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import axios from 'axios';
-import { url } from '../../../API/index';
-import { useCheckAuth } from '../../../API/services/Auth/useCheckAuth';
-import { setUser } from '../../../redux/authSlice';
 import { useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useCheckAuth } from '../auth/useCheckAuth';
+import { url } from '@/api';
+import { setUser } from '@/app/redux/slices/authSlice';
+import { useRouter } from 'next/router';
 
 export const useOrder = () => {
   const accessToken = localStorage.getItem('accessToken');
-  const { id } = useParams();
+  const router = useRouter();
+  const { id } = router.query;
   const [order, setOrder] = React.useState<any>();
   const [orderError, setOrderError] = React.useState('');
   const [orderLoading, setOrderLoading] = React.useState(false);
