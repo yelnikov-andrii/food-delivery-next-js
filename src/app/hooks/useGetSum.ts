@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 
 export const useGetSum = (productsInCart: any, initialProducts: any = []) => {

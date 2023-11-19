@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
-import { url } from '../../../API/index';
-import { useCheckAuth } from '../../../API/services/Auth/useCheckAuth';
-import { setUser } from '../../../redux/authSlice';
 import { useDispatch } from 'react-redux';
+import { useCheckAuth } from '../auth/useCheckAuth';
+import { url } from '@/api';
+import { setUser } from '@/app/redux/slices/authSlice';
 
 export const useOrders = () => {
   const user = useSelector((state: any) => state.auth.user);
