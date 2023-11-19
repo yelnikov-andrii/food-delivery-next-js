@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { ContactsList } from './ContactsList';
+import { ContactsList } from './contactsList';
 import { Contact } from '@/app/types';
 import styles from './contacts.module.scss';
 

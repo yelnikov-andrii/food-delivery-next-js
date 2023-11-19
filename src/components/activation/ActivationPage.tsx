@@ -1,5 +1,5 @@
 'use client';
-import { useActivate } from '@/app/api/services/auth/useActivate';
+import { useActivate } from '@/api/services/auth/useActivate';
 import React from 'react'
 
 export const ActivationPage = ({ activationToken }: {activationToken: string}) => {
