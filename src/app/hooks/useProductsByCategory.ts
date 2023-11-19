@@ -1,6 +1,6 @@
+import { url } from '@/api';
 import axios from 'axios';
 import React, { useState } from 'react';
-import { url } from '../API/index';
 
 
 export const useProductsByCategory = (typeId: number) => {
