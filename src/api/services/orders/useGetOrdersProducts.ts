@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { url } from '@/api';
-import { useRequest } from '@/app/hooks/useRequest';
 import { ProductInt } from '@/app/types';
 import axios from 'axios';
 import React from 'react';
@@ -36,7 +35,7 @@ export const useGetOrdersProducts = (order: Order) => {
       });
       Promise.all(produtPromises).then(values => setProducts(values));
     }
-  }, [order, useRequest]);
+  }, [order]);
 
   return { initialProducts, products };
 };
