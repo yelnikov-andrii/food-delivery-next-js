@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React, { Dispatch, SetStateAction } from 'react';
-import { usePasswordHandler } from '../../hooks/usePasswordHandler';
 import styles from './login.module.scss';
+import { usePasswordHandler } from '@/app/hooks/usePasswordHandler';
 
 interface Props {
   password: string;

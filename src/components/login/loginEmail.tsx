@@ -1,7 +1,6 @@
-import classNames from 'classnames';
 import React, { Dispatch, SetStateAction } from 'react';
-import { useEmailHandler } from '../../hooks/useEmailHandler';
 import styles from './login.module.scss';
+import { useEmailHandler } from '@/app/hooks/useEmailHandler';
 
 interface Props {
   email: string;

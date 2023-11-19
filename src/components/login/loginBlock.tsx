@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import styles from './login.module.scss';
-import { useLogin } from '@/app/api/services/auth/useLogin';
 import { LoginEmail } from './loginEmail';
 import { LoginPassword } from './loginPassword';
 import { LoginUnauthorized } from './loginUnauthorized';
+import { useLogin } from '@/api/services/auth/useLogin';
 
 export const LoginBlock = () => {
   const [email, setEmail] = React.useState('');
