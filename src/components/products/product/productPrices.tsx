@@ -1,4 +1,4 @@
-'use client';import { ProductInt } from '@/app/types';
+'use client';import { ProductInt } from '@/types';
 import React from 'react';
 
 interface Props {

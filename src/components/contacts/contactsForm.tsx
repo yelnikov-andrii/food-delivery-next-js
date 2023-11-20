@@ -1,8 +1,8 @@
 'use client';
 import React, {Dispatch, SetStateAction} from 'react';
-import { useEmailHandler } from '@/app/hooks/useEmailHandler';
+import { useEmailHandler } from '@/hooks/useEmailHandler';
 import styles from './contacts.module.scss';
-import { useSendData } from '@/app/hooks/useSendData';
+import { useSendData } from '@/hooks/useSendData';
 import { url } from '@/api';
 
 interface Props {

@@ -7,9 +7,9 @@ import { ProductSouses } from './productSouses';
 import { ProductButtonAdd } from './productButtonAdd';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useAlert } from '@/app/hooks/useAlert';
+import { useAlert } from '@/hooks/useAlert';
 import { Provider } from 'react-redux';
-import { store } from '@/app/redux/store';
+import { store } from '@/redux/store';
 import styles from './product.module.scss';
 
 interface Props {

@@ -1,4 +1,4 @@
-import { setUser } from '@/app/redux/slices/authSlice';
+import { setUser } from '@/redux/slices/authSlice';
 import { url } from '../..';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';

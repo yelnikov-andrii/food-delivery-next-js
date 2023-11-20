@@ -1,5 +1,4 @@
-import { contacts } from '@/app/data/footerData';
-import { Contact } from '@/app/types';
+import { contacts } from '@/data/footerData';
 import React from 'react'
 
 export default function FooterListContacts() {

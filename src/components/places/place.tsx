@@ -1,4 +1,4 @@
-import { PlaceInterface } from '@/app/types';
+import { PlaceInterface } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 

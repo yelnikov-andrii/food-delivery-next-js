@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { Product } from './product';
 import { url } from '../../api';
-import { useRequest } from '@/app/hooks/useRequest';
+import { useRequest } from '@/hooks/useRequest';
 import styles from './products.module.scss';
 import { Loading } from '../ui/loading/loading';
 import { Search } from '../ui/searchBlock/search';

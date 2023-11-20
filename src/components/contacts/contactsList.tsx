@@ -1,4 +1,4 @@
-import { Data, DataItem } from '@/app/types';
+import { Data, DataItem } from '@/types';
 import React from 'react';
 import styles from './contacts.module.scss';
 

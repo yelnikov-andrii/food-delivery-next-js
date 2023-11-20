@@ -1,7 +1,7 @@
 "use client";
 import { url } from '../../api';
-import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
-import { useSendData } from '@/app/hooks/useSendData';
+import { useChangeBooleanWithTimeSpan } from '@/hooks/useChangeBooleanWithTimeSpan';
+import { useSendData } from '@/hooks/useSendData';
 import React from 'react'
 import { MyModal } from '../../components/ui/myModal/myModal';
 import styles from './modalCallback.module.scss';

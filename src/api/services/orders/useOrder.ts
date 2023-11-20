@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { useCheckAuth } from '../auth/useCheckAuth';
 import { url } from '@/api';
-import { setUser } from '@/app/redux/slices/authSlice';
+import { setUser } from '@/redux/slices/authSlice';
 import { useRouter } from 'next/router';
 
 export const useOrder = () => {

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { useCheckAuth } from '../auth/useCheckAuth';
 import { url } from '@/api';
-import { setUser } from '@/app/redux/slices/authSlice';
+import { setUser } from '@/redux/slices/authSlice';
 
 export const useOrders = () => {
   const user = useSelector((state: any) => state.auth.user);

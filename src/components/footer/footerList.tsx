@@ -1,4 +1,4 @@
-import { Category } from '@/app/types'
+import { Category } from '@/types'
 import Link from 'next/link'
 import React from 'react'
 

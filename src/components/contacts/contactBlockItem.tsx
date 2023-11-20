@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ContactsList } from './contactsList';
-import { Contact } from '@/app/types';
+import { Contact } from '@/types';
 import styles from './contacts.module.scss';
 
 interface Props {

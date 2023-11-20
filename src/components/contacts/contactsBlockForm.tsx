@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useChangeBooleanWithTimeSpan } from '@/app/hooks/useChangeBooleanWithTimeSpan';
+import { useChangeBooleanWithTimeSpan } from '@/hooks/useChangeBooleanWithTimeSpan';
 import styles from './contacts.module.scss';
 import { ContactsForm } from './contactsForm';
 

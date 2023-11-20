@@ -4,7 +4,7 @@ import ModalCallback from './ModalCallback';
 import { HeaderNav } from './HeaderNav';
 import Link from 'next/link';
 import { Provider } from 'react-redux';
-import { store } from '@/app/redux/store';
+import { store } from '@/redux/store';
 import styles from './pageStyle.module.scss';
 
 export default function Header() {

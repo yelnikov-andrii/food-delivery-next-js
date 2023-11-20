@@ -4,9 +4,9 @@ import { RegistrationSuccess } from './registrationSuccess';
 import { RegistrationEmail } from './registrationEmail';
 import { RegistrationPassword } from './registrationPassword';
 import { RegistrationConfirmPassword } from './registrationConfirmPassword';
-import { useCheckPasswords } from '../../app/hooks/useCheckPasswords';
-import { usePasswordHandler } from '@/app/hooks/usePasswordHandler';
-import { useRegister } from '@/app/../api/services/auth/useRegister';
+import { useCheckPasswords } from '../../hooks/useCheckPasswords';
+import { usePasswordHandler } from '@/hooks/usePasswordHandler';
+import { useRegister } from '@/api/services/auth/useRegister';
 import styles from './registration.module.scss';
 
 export const RegistrationBlock = () => {

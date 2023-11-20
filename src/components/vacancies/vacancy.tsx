@@ -1,4 +1,4 @@
-import { VacancyInt } from '@/app/types';
+import { VacancyInt } from '@/types';
 import Image from 'next/image';
 import React from 'react';
 

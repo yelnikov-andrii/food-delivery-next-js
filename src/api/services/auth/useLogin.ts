@@ -2,8 +2,8 @@
 import React from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { UserAuth } from '@/app/types';
-import { setUser } from '@/app/redux/slices/authSlice';
+import { UserAuth } from '@/types';
+import { setUser } from '@/redux/slices/authSlice';
 import { useRouter } from 'next/navigation';
 import { url } from '@/api';
 

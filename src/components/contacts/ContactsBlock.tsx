@@ -1,5 +1,5 @@
 import React from 'react';
-import { contactsArr } from '@/app/data/contactsData';
+import { contactsArr } from '@/data/contactsData';
 import styles from './contacts.module.scss';
 import { ContactsBlockItem } from './contactBlockItem';
 

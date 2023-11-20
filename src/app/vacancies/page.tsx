@@ -1,6 +1,6 @@
 import React from 'react';
-import { arrVacancies } from '../data/vacancies';
 import { Vacancy } from '../../components/vacancies/vacancy';
+import { arrVacancies } from '@/data/vacancies';
 
 export default function Vacancies() {
   return (

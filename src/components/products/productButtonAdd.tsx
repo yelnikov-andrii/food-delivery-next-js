@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styles from './product.module.scss';
-import { useAddProduct } from '@/app/hooks/useAddProduct';
+import { useAddProduct } from '@/hooks/useAddProduct';
 
 interface Props {
   product: any;

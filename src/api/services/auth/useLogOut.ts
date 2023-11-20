@@ -1,5 +1,5 @@
 import { url } from '@/api';
-import { setUser } from '@/app/redux/slices/authSlice';
+import { setUser } from '@/redux/slices/authSlice';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 

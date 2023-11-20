@@ -3,12 +3,12 @@ import React from 'react'
 import { ProductCardSizes } from './productCardSizes'
 import { ProductCardSouses } from './productCardSouses'
 import { ProductCardWeightAndCount } from './productCardWeightAndCount'
-import { ProductInt } from '@/app/types'
+import { ProductInt } from '@/types'
 import { ProductPrices } from './productPrices'
 import { ProductCardCounter } from './productCardCounter'
-import { useAlert } from '@/app/hooks/useAlert'
+import { useAlert } from '@/hooks/useAlert'
 import { Provider } from 'react-redux';
-import { store } from '@/app/redux/store';
+import { store } from '@/redux/store';
 import styles from './product.module.scss';
 
 interface Props {

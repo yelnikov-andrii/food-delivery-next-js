@@ -1,5 +1,5 @@
+import { delArr } from '@/data/deliveryData';
 import React from 'react'
-import { delArr } from '../data/deliveryData';
 
 export default function Delivery() {
   return (

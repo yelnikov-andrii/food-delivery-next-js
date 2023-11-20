@@ -3,7 +3,7 @@ import { url } from '../../';
 import React from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { setUser } from '@/app/redux/slices/authSlice';
+import { setUser } from '@/redux/slices/authSlice';
 
 export const useActivate = (activationToken: string) => {
   const [isActivated, setIsActivated] = React.useState(false);
