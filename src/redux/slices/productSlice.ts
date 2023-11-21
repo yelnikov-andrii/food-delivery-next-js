@@ -31,6 +31,8 @@ export const productsSlice: any = createSlice({
     removeProduct: (state, action: any) => {
       state.products = state.products.filter((el: any) => el.id !== action.payload);
       localStorage.setItem('productsInCart', state.products);
+      console.log('remove');
+      console.log(localStorage.getItem('productsInCart'));
     },
     clearCart: (state) => {
       state.products = [];
