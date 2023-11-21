@@ -69,7 +69,7 @@
     background: $secondaryColor;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
     }
   }
 
@@ -86,7 +86,7 @@
     color: teal;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
     }
   }
 }

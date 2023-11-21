@@ -144,7 +144,7 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
         </div>
       )}
       <Link 
-        href="cart"
+        href="/cart"
         className={styles.headerNav__link}
       >
       <div className={styles.headerNav__cart}>

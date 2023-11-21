@@ -41,7 +41,7 @@
     cursor: pointer;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
     }
   }
 }

@@ -1,6 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-export default function ProductItemLayout({ children }: {children: React.ReactNode}) {
+export default function ProductItemLayout({ children, params }: {children: React.ReactNode, params: {
+  productId: string;
+}}) {
   return (
     <div>
       {children}

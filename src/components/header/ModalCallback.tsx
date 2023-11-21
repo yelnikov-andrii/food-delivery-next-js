@@ -9,7 +9,7 @@ import styles from './modalCallback.module.scss';
 export default function ModalCallback({ setShow, show }: any) {
   const handleClose = () => setShow(false);
   const [name, setName] = React.useState('');
-  const [number, setNumber] = React.useState('');
+  const [number, setNumber] = React.useState('+380');
   const { sendData } = useSendData();
   const [sent, setSent]: any = useChangeBooleanWithTimeSpan(false, false, 3000);
 
@@ -71,7 +71,9 @@ export default function ModalCallback({ setShow, show }: any) {
                 value={number}
                 onChange={(e) => {
                   if (!isNaN(+e.target.value)) {
-                    setNumber(e.target.value);
+                    if (e.target.value.length <= 13) {
+                      setNumber(e.target.value);
+                    }
                   }
                 }}
                 className={styles.modalCallback__input}

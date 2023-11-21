@@ -14,18 +14,18 @@
     cursor: pointer;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
       background: $secondaryColor;
       border: 1px solid teal;
     }
 
     &--active {
-      background: yellow;
+      background: $hoverColor;
       border: none;
       color: #333;
 
       &:hover {
-        background: yellow;
+        background: $hoverColor;
         border: none;
         color: #333;
       }

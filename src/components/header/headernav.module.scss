@@ -16,7 +16,7 @@
     background: #fff;
     padding: 20px 5px 10px 0;
     border-bottom: 1px solid gray;
-    z-index: 14;
+    z-index: 2;
     transition: left 1s ease;
   }
 
@@ -35,7 +35,7 @@
       background: #fff;
       padding: 20px 0 10px 0;
       border-bottom: 1px solid gray;
-      z-index: 14;
+      z-index: 2;
       transition: all 1s ease;
     }
   }
@@ -92,7 +92,7 @@
     color: $primaryColor;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
     }
   }
 
@@ -105,7 +105,7 @@
     cursor: pointer;
 
     &:hover {
-      color: yellow;
+      color: $hoverColor;
     }
   }
 

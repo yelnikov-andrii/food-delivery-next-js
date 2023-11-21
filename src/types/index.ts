@@ -42,6 +42,7 @@ export interface ProductInt {
   id: number;
   prices?: number[];
   price?: number;
+  count: number;
 }
 
 export interface PlaceInterface {

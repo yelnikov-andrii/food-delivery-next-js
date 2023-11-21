@@ -21,7 +21,7 @@ export default async function Home() {
        <Categories arr={categoriesArr} />
        <MainProduct 
           categoryName="Піца" 
-          categoryLink="pizzas" 
+          categoryLink="/products/pizzas" 
         >
           {pizzas && pizzas.map((pizza: any) => (
             <Product 
@@ -33,7 +33,7 @@ export default async function Home() {
         </MainProduct>
           <MainProduct 
             categoryName="Суші" 
-            categoryLink="sushi"
+            categoryLink="/products/sushi"
           >
             {sushi && sushi.map((sushiItem: any) => (
               <Product 
@@ -45,7 +45,7 @@ export default async function Home() {
           </MainProduct>
           <MainProduct 
             categoryName="Шаурма" 
-            categoryLink="shaurma" 
+            categoryLink="/products/shaurma" 
           >
             {shaurma && shaurma.map((shaurmaItem: any) => (
               <Product 
@@ -57,7 +57,7 @@ export default async function Home() {
           </MainProduct>
           <MainProduct 
             categoryName="Салати"
-            categoryLink="salads"
+            categoryLink="/products/salads"
           >
             {salads && salads.map((salad: any) => (
               <Product 
@@ -69,7 +69,7 @@ export default async function Home() {
           </MainProduct>
           <MainProduct 
             categoryName="Закуски"
-            categoryLink="snacks"
+            categoryLink="/products/snacks"
           >
             {snacks && snacks.map((snack: any) => (
               <Product 
@@ -81,7 +81,7 @@ export default async function Home() {
           </MainProduct>
           <MainProduct 
             categoryName="Мангал"
-            categoryLink="mangal"
+            categoryLink="/products/mangal"
           >
             {mangal && mangal.map((mangalItem: any) => (
               <Product 
@@ -93,7 +93,7 @@ export default async function Home() {
           </MainProduct>
           <MainProduct 
             categoryName="Супи"
-            categoryLink="soupes"
+            categoryLink="/products/soupes"
           >
             {soupes && soupes.map((soupe: any) => (
               <Product 

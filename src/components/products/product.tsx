@@ -87,7 +87,7 @@ export const Product: React.FC <Props> = ({ product, link }) => {
         <div 
           className={show ? styles.product__alert : styles.product__alert + ' ' + styles['product__alert--hidden']}
         >
-          Товар доданий до кошику
+          {product.count > 1 ? 'Продукти додані до кошику' : 'Продукт доданий до кошику'}
         </div>
       </div>
       </div>
