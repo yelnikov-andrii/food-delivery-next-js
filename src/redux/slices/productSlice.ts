@@ -16,20 +16,25 @@ export const productsSlice: any = createSlice({
     increment: (state, action: any) => {
       const foundProduct = state.products.find((el: any) => el.id === action.payload);
       foundProduct.quantity += 1;
+      localStorage.setItem('productsInCart', state.products);
     },
     decrement: (state, action: any) => {
       const foundProduct = state.products.find((el: any) => el.id === action.payload);
       foundProduct.quantity -= 1;
+      localStorage.setItem('productsInCart', state.products);
     },
     incrementWithValue: (state, action: any) => {
       const foundProduct = state.products.find((el: any) => el.id === action.payload.id);
       foundProduct.quantity += action.payload.quantity;
+      localStorage.setItem('productsInCart', state.products);
     },
     removeProduct: (state, action: any) => {
       state.products = state.products.filter((el: any) => el.id !== action.payload);
+      localStorage.setItem('productsInCart', state.products);
     },
     clearCart: (state) => {
       state.products = [];
+      localStorage.clear();
     },
   },
 });
