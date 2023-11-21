@@ -3,7 +3,7 @@ import { Loading } from '../../components/ui/loading/loading';
 
 export default function RegisstrationLoading() {
   return (
-    <div>
+    <div className='container'>
       <Loading />
     </div>
   )

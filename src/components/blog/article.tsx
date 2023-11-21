@@ -1,28 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import styles from './article.module.scss';
 
 export default function BlogArticle({ blog }: any) {
   return (
-    <div className="blogArticle">
+    <div className={styles.blogArticle}>
+      <div className={styles.blogArticle__imgWrapper}>
       <Image 
         src={blog.img} alt="" 
-        className="blogArticle__img"
-        width={300}
-        height={300}
+        className={styles.blogArticle__img}
+        width={100}
+        height={100}
+        layout='responsive'
       />
-      <p className="blogArticle__date">
+      </div>
+      <p className={styles.blogArticle__date}>
         {blog.data}
       </p>
-      <p className="blogArticle__name">
+      <p className={styles.blogArticle__name}>
         {blog.name}
       </p>
-      <p className="blogArticle__preview">
+      <p className={styles.blogArticle__preview}>
         {blog.preview}
       </p>
       <Link 
         href={`/blog/${blog.link}`} 
-        className="blogArticle__link"
+        className={styles.blogArticle__link}
       >
         Читати далі
       </Link>

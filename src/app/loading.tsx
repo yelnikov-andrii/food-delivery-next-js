@@ -3,7 +3,7 @@ import { Loading } from '../components/ui/loading/loading';
 
 export default function PageLoading() {
   return (
-    <div>
+    <div className='main__loading'>
       <Loading />
     </div>
   )

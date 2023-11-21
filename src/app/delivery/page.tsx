@@ -1,23 +1,26 @@
 import { delArr } from '@/data/deliveryData';
-import React from 'react'
+import React from 'react';
+import styles from './page.module.scss';
 
 export default function Delivery() {
   return (
-    <div className='delivery'>
-      <h1 className='delivery__title'>
+    <div className={styles.delivery}>
+      <div className="container">
+      <h1 className={styles.delivery__title}>
         Доставка та оплата
       </h1>
-      <div className="delivery__block">
-        <p className="delivery__blockTitle">
+      <div className={styles.delivery__block}>
+        <p className={styles.delivery__blockTitle}>
           Доставка та оплата
         </p>
-        <ul className="delivery__list">
+        <ul className={styles.delivery__list}>
           {delArr.map(item => (
-            <li className="delivery__item" key={item}>
+            <li className={styles.delivery__item} key={item}>
               {item}
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </div>
   );

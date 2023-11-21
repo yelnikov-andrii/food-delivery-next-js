@@ -4,10 +4,13 @@
 
   &__block {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 
     @media screen and (max-width: 768px) {
       flex-direction: column;
+      align-items: center;
       gap: 20px;
     }
   }

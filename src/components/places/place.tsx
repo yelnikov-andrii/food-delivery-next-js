@@ -1,6 +1,7 @@
 import { PlaceInterface } from '@/types';
 import Image from 'next/image';
 import React from 'react';
+import styles from './place.module.scss';
 
 
 
@@ -10,16 +11,19 @@ interface Props {
 
 export const Place: React.FC <Props> = ({ place }) => {
   return (
-    <div className="place" key={place.name}>
+    <div 
+      className={styles.place} 
+      key={place.name}
+    >
       <Image 
         src={place.img} 
         alt="place" 
-        className="place__img"
+        className={styles.place__img}
         layout="responsive"
         width={100}
         height={100}
       />
-      <p className="places__name">
+      <p className={styles.place__name}>
         {place.name}
       </p>
     </div>

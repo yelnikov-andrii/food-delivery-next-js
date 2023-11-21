@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss'; 
+
 .login {
   &__block {
     display: flex;
@@ -8,6 +10,9 @@
 
   &__form {
     width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     @media (max-width: 768px) {
       width: 90%;
@@ -34,6 +39,8 @@
     border-radius: 4px;
     width: 100%;
     max-width: 400px;
+    border: 1px solid teal;
+    outline: none;
 
     &--error {
       &.form-control {
@@ -56,6 +63,14 @@
     border-radius: 4px;
     cursor: pointer;
     width: 100%;
+    border: 1px solid teal;
+    outline: none;
+    color: $primaryColor;
+    background: $secondaryColor;
+
+    &:hover {
+      color: yellow;
+    }
   }
 
   &__error {
@@ -65,5 +80,13 @@
 
   &__unauthorized {
     margin-top: 20px;
+  }
+
+  &__unauthorizedLink {
+    color: teal;
+
+    &:hover {
+      color: yellow;
+    }
   }
 }

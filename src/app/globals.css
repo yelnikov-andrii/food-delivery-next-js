@@ -8,10 +8,19 @@ body {
   padding: 0;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   font-size: 16px;
   color: #333;
   text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .linkLight {
@@ -20,5 +29,9 @@ a {
 
 .main {
   padding: 50px 0;
+}
+
+.main__loading {
+  padding: 0 20px;
 }
 

@@ -8,7 +8,10 @@ export const LoginUnauthorized = () => {
       <p>
         Не зареєстровані?
       </p>
-      <Link href="/registration">
+      <Link 
+        className={styles.login__unauthorizedLink}
+        href="/registration"
+      >
         Зареєструватися
       </Link>
     </div>

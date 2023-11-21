@@ -12,12 +12,15 @@ import { getProducts } from '@/redux/slices/productSlice';
 import { useGetCountOfProducts } from '@/app/../hooks/useGetCountOfProducts';
 import { useCheckAuth } from '../../api/services/auth/useCheckAuth';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface Props {
-  setShow: Dispatch<SetStateAction<boolean>>
+  setShow: Dispatch<SetStateAction<boolean>>;
+  menuOpen: boolean;
+  setMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-export const HeaderNav: React.FC <Props> = ({ setShow }) => {
+export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) => {
   // const user = useSelector((state: any) => state.auth.user);
   const handleShow = () => setShow(true);
   const countOfProducts = useGetCountOfProducts();
@@ -49,11 +52,27 @@ export const HeaderNav: React.FC <Props> = ({ setShow }) => {
   }, [productsInCart]);
 
   return (
-    <nav className={styles.headerNav}>
+    <nav className={menuOpen ? styles.headerNav : styles['headerNav--closed']}>
       <>
+      <div 
+        className={styles.headerNav__close}
+      >
+        <div 
+          onClick={() => {
+            setMenuOpen(false);
+          }}
+          className={styles.headerNav__closeButton}
+        >
+          <span className={styles.headerNav__closeButtonSpan}></span>
+          <span className={styles.headerNav__closeButtonSpan}></span>
+        </div>
+      </div>
       <Link 
         href="/"
         className={styles.headerNav__link}
+        onClick={() => {
+          setMenuOpen(false);
+        }}
       >
         Головна
       </Link>
@@ -62,30 +81,37 @@ export const HeaderNav: React.FC <Props> = ({ setShow }) => {
           href={navLink.url} 
           key={navLink.name}
           className={styles.headerNav__link}
+          onClick={() => {
+            setMenuOpen(false);
+          }}
         >
           {navLink.name}
         </Link>
       ))}
     </>
-    <Dropdown
-      buttonContent='Телефони'
-    >
-      {phones.map((phone) => (
-          <a 
-            href={`tel:${phone}`} 
-            key={phone}
-            className={styles.headerNav__link}
-          >
-            {phone}
-          </a>
-        ))}
-    </Dropdown>
-      <button 
-        onClick={handleShow}
-        className={styles.headerNav__button}
-      >
-        Замовити дзвінок
-      </button>
+      <div className={styles.headerNav__row}>
+        <Dropdown
+          buttonContent='Телефони'
+        >
+          {phones.map((phone) => (
+              <a 
+                href={`tel:${phone}`} 
+                key={phone}
+                className={styles.headerNav__link}
+              >
+                {phone}
+              </a>
+            ))}
+        </Dropdown>
+      </div>
+      <div className={styles.headerNav__row}>
+        <button 
+          onClick={handleShow}
+          className={styles.headerNav__button}
+        >
+          Замовити дзвінок
+        </button>
+      </div>
       {!accessToken ? (
         <div className={styles.headerNav__auth}>
           <Link 

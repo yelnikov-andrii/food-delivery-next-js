@@ -1,14 +1,16 @@
 'use client'
 import React from 'react';
+import styles from './page.module.scss';
 
 export default function About() {
   return (
-    <div>
-      <h1>
+    <div className="container">
+      <div className={styles.about}>
+      <h1 className={styles.about__title}>
         Про компанію
       </h1>
-      <div>
-        <p>
+      <div className={styles.about__block}>
+        <p className={styles.about__txt}> 
           Pizza shop – це одна з перших доставок смачної піци та суші у Харкові. 
           Відкриття компанії датується 2009 роком, компанія не стоїть на місці і 
           регулярно доповнює своє меню новими позиціями, але також не забуває і 
@@ -20,6 +22,7 @@ export default function About() {
           Ласкаво просимо до сім&apos;ї мережі Pizza shop!
         </p>
       </div>
+    </div>
     </div>
   )
 }

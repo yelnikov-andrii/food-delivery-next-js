@@ -1,6 +1,7 @@
 import { VacancyInt } from '@/types';
 import Image from 'next/image';
 import React from 'react';
+import styles from './vacancy.module.scss';
 
 interface Props {
   vacancy: VacancyInt;
@@ -8,16 +9,19 @@ interface Props {
 
 export const Vacancy: React.FC <Props> = ({ vacancy }) => {
   return (
-    <div className="vacancy" key={vacancy.name}>
+    <div 
+      className={styles.vacancy}
+      key={vacancy.name}
+    >
       <Image 
         src={vacancy.img} 
         alt="" 
-        className="vacancy__img"
+        className={styles.vacancy__img}
         layout='responsive'
         width={100}
         height={100}
       />
-      <p className="vacancy__name">
+      <p className={styles.vacancy__name}>
         {vacancy.name}
       </p>
     </div>

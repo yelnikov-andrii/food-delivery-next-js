@@ -1,15 +1,16 @@
 import React from 'react';
 import BlogArticle from '../../components/blog/article';
 import { blogArr } from '@/data/blogData';
+import styles from './page.module.scss';
 
 export default function page() {
   return (
-    <section className='blog'>
+    <section className={styles.blog}>
       <div className='container'>
-        <h1 className='blog__title'>
+        <h1 className={styles.blog__title}>
           Блог
         </h1>
-        <div className='blog__block'>
+        <div className={styles.blog__block}>
           {blogArr.map(blog => (
             <BlogArticle blog={blog} key={blog.article} />
           ))}

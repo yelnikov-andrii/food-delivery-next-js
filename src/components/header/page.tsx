@@ -9,6 +9,7 @@ import styles from './pageStyle.module.scss';
 
 export default function Header() {
   const [show, setShow] = React.useState(false);
+  const [menuOpen, setMenuOpen] = React.useState(false);
 
   return (
     <Provider store={store}>
@@ -21,12 +22,20 @@ export default function Header() {
           Food delivery
         </Link>
         <nav className={styles.header__nav}>
-          {/* <div>
-            <h3>
+          <div className={styles.header__menu}>
+            <h3 
+              onClick={() => {
+                setMenuOpen(true);
+              }}
+              className={styles.header__menuH3}
+            >
               Меню
             </h3>
-          </div> */}
-          <HeaderNav setShow={setShow} />
+          </div>
+          <HeaderNav 
+            menuOpen={menuOpen}
+            setMenuOpen={setMenuOpen}
+            setShow={setShow} />
         </nav>
         <ModalCallback 
           show={show} 

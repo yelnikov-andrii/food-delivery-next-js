@@ -1,0 +1,175 @@
+@import '../../scss/vars.scss';
+
+.cart {
+  &__header {
+    font-size: 48px;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  &__h2 {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  &__h3 {
+    font-size: 28px;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  &__photo {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__size {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__souse {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__table {
+    border: 1px solid #333;
+  }
+
+  &__tableRow {
+    td {
+      border: 1px solid #333;
+    }
+  }
+
+  &__tableHeadRow {
+    th {
+      border: 1px solid #333;
+    }
+  }
+
+  &__photo {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  &__tablePrice {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__emptyBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  &__imageWrapper {
+    width: 100px;
+    margin: 0 0 10px 0;
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__sum {
+    font-weight: 700;
+    font-size: 28px;
+  }
+
+  &__goBack {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__button {
+    height: auto;
+    background: transparent;
+    border: none;
+  }
+
+  &__form {
+    width: 50%;
+    margin-bottom: 40px;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__formRow {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  &__formLabel {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__input {
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid teal;
+    outline: none;
+
+    &--error {
+      &.form-control {
+        color: red;
+      border-color: red;
+      box-shadow: red;
+      }
+    }
+  }
+
+  &__buttonWrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 0 0;
+  }
+
+  &__button {
+    max-width: 400px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+
+    &--send {
+      border: 1px solid teal;
+      outline: none;
+      color: $primaryColor;
+      background: $secondaryColor;
+
+      &:hover {
+        color: yellow;
+      }
+    }
+  }
+}
