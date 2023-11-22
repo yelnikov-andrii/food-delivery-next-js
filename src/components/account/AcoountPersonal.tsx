@@ -1,3 +1,4 @@
+'use client';
 import { useOrders } from '@/api/services/orders/useOrders';
 import React from 'react'
 import { Loading } from '../ui/loading/loading';
