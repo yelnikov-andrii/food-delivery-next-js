@@ -18,6 +18,11 @@ export const useOrders = () => {
 
   React.useEffect(() => {
     setOrdersLoading(true);
+    if (!user) {
+      setOrdersLoading(false);
+      return;
+    }
+
     axios.get(`${url}/orders/?email=${user.email}`, {
       headers:{
         Authorization: `Bearer ${accessToken}`,

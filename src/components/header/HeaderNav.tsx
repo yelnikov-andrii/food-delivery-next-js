@@ -154,7 +154,7 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
           <span className={styles['headerNav__cart--count']}>
             {countOfProducts}
           </span>
-        )}
+        )} 
       </div>
     </Link>
     </nav>

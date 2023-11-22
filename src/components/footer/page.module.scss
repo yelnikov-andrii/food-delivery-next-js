@@ -1,3 +1,5 @@
+@import '../../scss/vars.scss';
+
 .footer {
   background-image: url('https://pizzalife.ua/templates/main/wp-content/uploads/2019/03/demo1-0611177699-1.jpg');
   background-size: cover;
@@ -5,6 +7,7 @@
   background-repeat: no-repeat;
   color: gray;
   padding: 50px 20px;
+  min-height: $footerHeight;
 
   a {
     color: gray;

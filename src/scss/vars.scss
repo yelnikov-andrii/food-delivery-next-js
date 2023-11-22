@@ -1,3 +1,7 @@
 $primaryColor: teal;
 $secondaryColor: lightblue;
 $hoverColor: rgb(16, 159, 3);
+
+$headerHeight: 80px;
+$footerHeight: 300px;
+$mainHeight: calc((100vh - $headerHeight - $footerHeight));
