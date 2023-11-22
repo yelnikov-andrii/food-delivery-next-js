@@ -2,8 +2,13 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './product.module.scss';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
+import { ProductInt } from '@/types';
 
-export const ProductMainInfo: React.FC <any> = ({ product }) => {
+interface Props {
+  product: ProductInt;
+}
+
+export const ProductMainInfo: React.FC <Props> = ({ product }) => {
   return (
     <div className={styles.product__mainInfo}>
       <Link href={product.id.toString()} >

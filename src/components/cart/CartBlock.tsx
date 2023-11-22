@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 'use client';
 import { useGetSum } from '@/hooks/useGetSum';
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import styles from './cart.module.scss';
 import { useChangeBooleanWithTimeSpan } from '@/hooks/useChangeBooleanWithTimeSpan';
@@ -11,12 +11,12 @@ import { CartForm } from './CartForm';
 import { CartAfterFilledForm } from './CartAfterFilled';
 import { getProducts } from '@/redux/slices/productSlice';
 import { ProductInt } from '@/types';
+import { RootState } from '@/redux/store';
 
 export const CartBlock = () => {
-  const productsInCart = useSelector((state: any) => state.product.products);
+  const productsInCart = useSelector((state: RootState) => state.product.products);
   const { sum } = useGetSum(productsInCart);
-  const [filled, setFilled]: any = 
-  useChangeBooleanWithTimeSpan(false, false, 3000);
+  const [filled, setFilled]: any = useChangeBooleanWithTimeSpan(false, false, 3000);
   const dispatch = useDispatch();
   const [productsFromStorage, setProductsFromStorage] = React.useState<ProductInt[]>([]);
 
@@ -47,7 +47,9 @@ export const CartBlock = () => {
         <p className={styles.cart__sum}>
           Сума до оплати: {sum} грн.
         </p>
-        <CartForm setFilled={setFilled} />
+        <CartForm 
+          setFilled={setFilled} 
+        />
       </>
     ) : (
       <CartAfterFilledForm />

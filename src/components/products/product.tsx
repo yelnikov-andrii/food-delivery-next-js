@@ -11,9 +11,10 @@ import { useAlert } from '@/hooks/useAlert';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import styles from './product.module.scss';
+import { ProductInt } from '@/types';
 
 interface Props {
-  product: any;
+  product: ProductInt;
   link?: string;
 }
 
@@ -56,7 +57,7 @@ export const Product: React.FC <Props> = ({ product, link }) => {
           </div>
         )}
         {product.souses && (
-          <div className={product.product__buttonsWrapper}>
+          <div className={styles.product__buttonsWrapper}>
             <ProductSouses 
               product={product}
               selectedSouse={selectedSouse}
@@ -87,7 +88,7 @@ export const Product: React.FC <Props> = ({ product, link }) => {
         <div 
           className={show ? styles.product__alert : styles.product__alert + ' ' + styles['product__alert--hidden']}
         >
-          {product.count > 1 ? 'Продукти додані до кошику' : 'Продукт доданий до кошику'}
+          Продукт доданий до кошику
         </div>
       </div>
       </div>

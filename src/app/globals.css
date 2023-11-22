@@ -23,6 +23,7 @@ a {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  min-height: 500px;
 }
 
 .linkLight {
@@ -35,5 +36,6 @@ a {
 
 .main__loading {
   padding: 0 20px;
+  min-height: 500px;
 }
 

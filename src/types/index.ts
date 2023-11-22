@@ -43,6 +43,24 @@ export interface ProductInt {
   prices?: number[];
   price?: number;
   count: number;
+  categories: string[];
+  components: string;
+  img: string;
+  sizes: string[];
+  souses: string[];
+  typeId: number;
+  weight: number;
+}
+
+export interface ProductAddedInt {
+  selectedSize: number;
+  selectedSouse: string;
+  id: string;
+  prices: number[];
+  quantity: number;
+  name: string;
+  img: string;
+  price: number;
 }
 
 export interface PlaceInterface {

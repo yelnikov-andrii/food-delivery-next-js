@@ -9,6 +9,7 @@ import { Loading } from '../ui/loading/loading';
 import { Search } from '../ui/searchBlock/search';
 import { TypeList } from '../ui/typeList/typeList';
 import { LoadMore } from '../ui/loadMore/loadMore';
+import { ProductInt } from '@/types';
 
 interface Props {
   typeId: number;
@@ -29,7 +30,7 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
   ];
   const [page, setPage] = React.useState(1);
   const [appliedInput, setAppliedInput] = React.useState('');
-  let timerRef: any = React.useRef();
+  let timerRef: React.MutableRefObject<any> = React.useRef();
 
   React.useEffect(() => {
     const delay = 1000;
@@ -55,7 +56,7 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
         return axios.get(`${url}/products?typeId=${typeId}`);
       }
 
-      return axios.get(`${url}/products?typeId=${typeId}&limit=9&page=${page}` as any);
+      return axios.get(`${url}/products?typeId=${typeId}&limit=9&page=${page}`);
     } else {
 
       if (appliedInput) {
@@ -76,7 +77,7 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
     }
 
     if (appliedInput) {
-      return filteredProducts.filter((product: any) => 
+      return filteredProducts.filter((product: ProductInt) => 
         product.name.toLowerCase().includes(appliedInput.toLowerCase()) 
         || appliedInput.toLowerCase().includes(product.name.toLowerCase()));
     } else {
@@ -87,24 +88,28 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
   const sortedProducts = React.useMemo(() => {
     switch(selectedOption) {
     case 'За назвою А-Я':
-      return searchedProducts.sort((a: any, b: any) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+      return searchedProducts.sort((a: ProductInt, b: ProductInt) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
     case 'За назвою Я-А':
-      return searchedProducts.sort((a: any, b: any) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
+      return searchedProducts.sort((a: ProductInt, b: ProductInt) => b.name.toLowerCase().localeCompare(a.name.toLowerCase()));
     case 'За ціною від меншої до більшої':
-      return searchedProducts.sort((a: any, b: any) => {
-        if (a.price) {
+      return searchedProducts.sort((a: ProductInt, b: ProductInt) => {
+        if (a.price && b.price) {
           return a.price - b.price;
         }
 
-        return a.prices[0] - b.prices[0];
+        if (a.prices && b.prices) {
+          return a.prices[0] - b.prices[0];
+        }
       });
     case 'За ціною від більшої до меншої':
-      return searchedProducts.sort((a: any, b: any) => {
-        if (a.price) {
+      return searchedProducts.sort((a: ProductInt, b: ProductInt) => {
+        if (a.price && b.price) {
           return b.price - a.price;
         }
 
-        return b.prices[0] - a.prices[0];
+        if (a.prices && b.prices) {
+          return b.prices[0] - a.prices[0];
+        }
       });
     default:
       return searchedProducts;
@@ -168,7 +173,7 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
                 </h2>
               </div>
             ) : (
-              sortedProducts && sortedProducts.map((product: any) => (
+              sortedProducts && sortedProducts.map((product: ProductInt) => (
                 <div 
                   className={styles.products__item}
                   key={product.id}

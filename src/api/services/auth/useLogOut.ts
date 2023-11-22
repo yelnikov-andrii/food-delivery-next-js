@@ -13,5 +13,3 @@ export const useLogout = () => {
 
   return { logout };
 };
-
-// api changed

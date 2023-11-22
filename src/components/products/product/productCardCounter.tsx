@@ -3,9 +3,11 @@ import { useAddProduct } from '@/hooks/useAddProduct';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import styles from './product.module.scss';
+import { ProductInt } from '@/types';
+import { RootState } from '@/redux/store';
 
 interface Props {
-  product: any;
+  product: ProductInt;
   selectedSize: number;
   selectedSouse: number;
   showAlert: () => void;
@@ -13,7 +15,7 @@ interface Props {
 
 export const ProductCardCounter: React.FC <Props> = ({product, selectedSize, selectedSouse, showAlert}) => {
   const [quantity, setQuantity] = React.useState(1);
-  const productsInCart = useSelector((state: any) => state.product.products);
+  const productsInCart = useSelector((state: RootState) => state.product.products);
   const { add } = useAddProduct(product, selectedSize, selectedSouse, showAlert, productsInCart, quantity, true);
 
   return (

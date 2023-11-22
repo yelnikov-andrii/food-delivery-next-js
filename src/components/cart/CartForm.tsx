@@ -5,6 +5,7 @@ import { useNormalizeProducts } from '../../hooks/useNormalizeProducts';
 import { useSendData } from '../../hooks/useSendData';
 import styles from './cart.module.scss';
 import { clearCart } from '@/redux/slices/productSlice';
+import { RootState } from '@/redux/store';
 
 interface Props {
   setFilled: Dispatch<SetStateAction<boolean>>;
@@ -15,8 +16,8 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
   const [phone, setPhone] = React.useState('');
   const [address, setAddress] = React.useState('');
 
-  const productsInCart = useSelector((state: any) => state.product.products);
-  const user = useSelector((state: any) => state.auth.user);
+  const productsInCart = useSelector((state: RootState) => state.product.products);
+  const user = useSelector((state: RootState) => state.auth.user);
   const products = useNormalizeProducts(productsInCart);
   const dispatch = useDispatch();
   const { sendData } = useSendData();

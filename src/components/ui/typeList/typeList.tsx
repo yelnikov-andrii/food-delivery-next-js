@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import styles from './typelist.module.scss';
 
-export const TypeList: React.FC <any> = ({ setFilterType, filterType, types, setPage }) => {
+interface Props {
+  setFilterType: Dispatch<SetStateAction<string>>;
+  filterType: string;
+  types: string[];
+  setPage: Dispatch<SetStateAction<number>>;
+}
+
+export const TypeList: React.FC <Props> = ({ setFilterType, filterType, types, setPage }) => {
   return (
     <div 
       className={styles.typelist}
     >
-      {types.map((type: any) => (
+      {types.map((type: string) => (
         <div
           key={type}
           onClick={() => {

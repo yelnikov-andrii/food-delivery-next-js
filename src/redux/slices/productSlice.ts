@@ -1,38 +1,37 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { ProductAddedInt, ProductInt } from '@/types';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-export const productsSlice: any = createSlice({
+export const productsSlice = createSlice({
   name: 'products',
   initialState: {
-    products: [] as any,
+    products: [] as ProductAddedInt[],
   },
   reducers: {
-    getProducts: (state, action: any) => {
+    getProducts: (state, action: PayloadAction<ProductAddedInt[]>) => {
       state.products = action.payload;
     },
-    addProduct: (state, action: any) => {
+    addProduct: (state, action: PayloadAction<ProductAddedInt>) => {
       state.products.push(action.payload);
-      localStorage.setItem('productsInCart', state.products);
+      localStorage.setItem('productsInCart', JSON.stringify(state.products));
     },
-    increment: (state, action: any) => {
-      const foundProduct = state.products.find((el: any) => el.id === action.payload);
-      foundProduct.quantity += 1;
-      localStorage.setItem('productsInCart', state.products);
+    increment: (state, action: PayloadAction<string>) => {
+      const foundProduct: ProductAddedInt | undefined = state.products.find((el: ProductAddedInt) => el.id === action.payload);
+      foundProduct!.quantity += 1;
+      localStorage.setItem('productsInCart', JSON.stringify(state.products));
     },
-    decrement: (state, action: any) => {
-      const foundProduct = state.products.find((el: any) => el.id === action.payload);
-      foundProduct.quantity -= 1;
-      localStorage.setItem('productsInCart', state.products);
+    decrement: (state, action: PayloadAction<string>) => {
+      const foundProduct = state.products.find((el: ProductAddedInt) => el.id === action.payload);
+      foundProduct!.quantity -= 1;
+      localStorage.setItem('productsInCart', JSON.stringify(state.products));
     },
-    incrementWithValue: (state, action: any) => {
-      const foundProduct = state.products.find((el: any) => el.id === action.payload.id);
-      foundProduct.quantity += action.payload.quantity;
-      localStorage.setItem('productsInCart', state.products);
+    incrementWithValue: (state, action: PayloadAction<{id: string, quantity: number}>) => {
+      const foundProduct = state.products.find((el: ProductAddedInt) => el.id === action.payload.id);
+      foundProduct!.quantity += action.payload.quantity;
+      localStorage.setItem('productsInCart', JSON.stringify(state.products));
     },
-    removeProduct: (state, action: any) => {
-      state.products = state.products.filter((el: any) => el.id !== action.payload);
-      localStorage.setItem('productsInCart', state.products);
-      console.log('remove');
-      console.log(localStorage.getItem('productsInCart'));
+    removeProduct: (state, action: PayloadAction<string>) => {
+      state.products = state.products.filter((el: ProductAddedInt) => el.id !== action.payload);
+      localStorage.setItem('productsInCart', JSON.stringify(state.products));
     },
     clearCart: (state) => {
       state.products = [];

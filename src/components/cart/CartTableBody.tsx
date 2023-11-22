@@ -4,13 +4,15 @@ import { CartTableCounter } from './CartTableCounter';
 import styles from './cart.module.scss';
 import Image from 'next/image';
 import { removeProduct } from '@/redux/slices/productSlice';
+import { RootState } from '@/redux/store';
+import { ProductAddedInt, ProductInt } from '@/types';
 
 export const CartTableBody = () => {
-  const productsInCart = useSelector((state: any) => state.product.products);
+  const productsInCart = useSelector((state: RootState) => state.product.products);
   const dispatch = useDispatch();
   return (
     <tbody>
-      {productsInCart.map((product: any) => (
+      {productsInCart.map((product: ProductAddedInt) => (
         <tr
           key={product.id}
           className={styles.cart__tableRow}

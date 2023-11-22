@@ -2,8 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styles from './cart.module.scss';
 import { decrement, increment, removeProduct } from '@/redux/slices/productSlice';
+import { ProductAddedInt } from '@/types';
 
-export const CartTableCounter: React.FC <any> = ({product}) => {
+interface Props {
+  product: ProductAddedInt;
+}
+
+export const CartTableCounter: React.FC <Props> = ({product}) => {
   const dispatch = useDispatch();
   return (
     <div className={styles.cart__quantity}>

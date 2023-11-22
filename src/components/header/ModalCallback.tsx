@@ -2,11 +2,16 @@
 import { url } from '../../api';
 import { useChangeBooleanWithTimeSpan } from '@/hooks/useChangeBooleanWithTimeSpan';
 import { useSendData } from '@/hooks/useSendData';
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { MyModal } from '../../components/ui/myModal/myModal';
 import styles from './modalCallback.module.scss';
 
-export default function ModalCallback({ setShow, show }: any) {
+interface Props {
+  setShow: Dispatch<SetStateAction<boolean>>;
+  show: boolean;
+}
+
+export default function ModalCallback({ setShow, show }: Props) {
   const handleClose = () => setShow(false);
   const [name, setName] = React.useState('');
   const [number, setNumber] = React.useState('+380');

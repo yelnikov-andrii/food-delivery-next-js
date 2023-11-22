@@ -1,18 +1,20 @@
-import Image from 'next/image'
 import getProductsByCategory from './lib/getProductsByCategory';
 import Categories from '../components/main/categories';
 import { MainProduct } from '../components/main/mainProduct';
 import { Product } from '../components/products/product';
 import { categoriesArr } from '@/data/footerData';
+import { ProductInt } from '@/types';
 
 export default async function Home() {
-  const pizzas = await getProductsByCategory(1);
+  const pizzas: ProductInt[] = await getProductsByCategory(1);
   const sushi = await getProductsByCategory(2);
   const shaurma = await getProductsByCategory(3);
   const salads = await getProductsByCategory(4);
   const snacks = await getProductsByCategory(5);
   const mangal = await getProductsByCategory(6);
   const soupes = await getProductsByCategory(7);
+
+  console.log(pizzas);
 
   return (
     <div 

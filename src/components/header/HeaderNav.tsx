@@ -1,8 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-// import { useLogout } from '@/app/API/services/auth/useLogOut';
+import { useLogout } from '@/api/services/auth/useLogOut';
 import { navLinks, phones } from '@/app/../data/headerData';
-// import { useGetCountOfProducts } from '@/app/hooks/useGetCountOfProducts';
 import { NavLink } from '@/app/../types';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react';
@@ -12,7 +11,7 @@ import { getProducts } from '@/redux/slices/productSlice';
 import { useGetCountOfProducts } from '@/app/../hooks/useGetCountOfProducts';
 import { useCheckAuth } from '../../api/services/auth/useCheckAuth';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { RootState } from '@/redux/store';
 
 interface Props {
   setShow: Dispatch<SetStateAction<boolean>>;
@@ -21,18 +20,18 @@ interface Props {
 }
 
 export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) => {
-  // const user = useSelector((state: any) => state.auth.user);
+  const user = useSelector((state: RootState) => state.auth.user);
   const handleShow = () => setShow(true);
   const countOfProducts = useGetCountOfProducts();
   let accessToken = null;
 
-  // const { logout } = useLogout();
+  const { logout } = useLogout();
 
   React.useEffect(() => {
     accessToken = localStorage.getItem('accessToken');
   }, [])
 
-  const productsInCart = useSelector((state: any) => state.product.products);
+  const productsInCart = useSelector((state: RootState) => state.product.products);
   const dispatch = useDispatch();
   const { refresh } = useCheckAuth();
 
@@ -131,7 +130,7 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
         <div className={styles.headerNav__auth}>
           <div onClick={(e) => {
             e.preventDefault();
-            // logout();
+            logout();
           }}>
             Вийти
           </div>

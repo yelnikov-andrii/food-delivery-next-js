@@ -1,11 +1,12 @@
 import { url } from '@/api';
+import { ProductInt } from '@/types';
 import axios from 'axios';
 import React, { useState } from 'react';
 
 
 export const useProductsByCategory = (typeId: number) => {
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<ProductInt[] | null>(null);
   const [error, setError] = useState(null);
 
   React.useEffect(() => {

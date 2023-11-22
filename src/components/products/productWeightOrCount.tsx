@@ -1,7 +1,12 @@
 import React from 'react';
 import styles from './product.module.scss';
+import { ProductInt } from '@/types';
 
-export const ProductWeightOrCount: React.FC <any> = ({ product }) => {
+interface Props {
+  product: ProductInt;
+}
+
+export const ProductWeightOrCount: React.FC <Props> = ({ product }) => {
   return (
     <div>
       <button

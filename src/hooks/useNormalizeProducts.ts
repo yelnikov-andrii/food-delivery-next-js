@@ -1,8 +1,9 @@
+import { ProductAddedInt } from '@/types';
 import React from 'react';
 
-export const useNormalizeProducts = (products: any) => {
+export const useNormalizeProducts = (products: ProductAddedInt[]) => {
   const normalizedProducts = React.useMemo(() => {
-    return products.map((product: any) => {
+    return products.map((product: ProductAddedInt) => {
       const {id, selectedSize, name, selectedSouse, quantity} = product;
       return {id, name, selectedSize, selectedSouse, quantity};
     });

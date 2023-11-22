@@ -1,19 +1,21 @@
 'use client';
 import { useOrders } from '@/api/services/orders/useOrders';
 import React from 'react'
-// import { Loading } from '../ui/loading/loading';
-// import Link from 'next/link';
+import { Loading } from '../ui/loading/loading';
+import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
+import { RootState } from '@/redux/store';
 
 
 export const AcoountPersonal = () => {
   const { ordersNormalized, ordersError, ordersLoading } = useOrders();
-  const { auth } = useSelector((state: any) => state.auth);
+  const { user } = useSelector((state: RootState) => state.auth);
   const router = useRouter();
 
-  if (!auth) {
-    router.push('/login');
+  if (!user) {
+    router.replace('/login');
+    return;
   }
 
   return (
@@ -22,7 +24,7 @@ export const AcoountPersonal = () => {
         {ordersNormalized && ordersNormalized.length > 0 
           ? 'Ваші замовлення' : ordersLoading === true ? 'Завантаження' : 'Замовлень немає'}
       </h5>
-      {/* {ordersLoading === true ? (
+      {ordersLoading === true ? (
         <Loading />
       ) : (
         <div>
@@ -32,7 +34,7 @@ export const AcoountPersonal = () => {
             </Link>
           ))}
         </div>
-      )} */}
+      )}
     </div>
   )
 }

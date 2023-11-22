@@ -1,9 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { addProduct, increment, incrementWithValue } from '../redux/slices/productSlice';
+import { ProductAddedInt, ProductInt } from '@/types';
 
 export const useAddProduct = (
-  product: any, selectedSize: any, selectedSouse: any, showAlert: any, 
-  productsInCart: any, quantity: any, card: boolean) => {
+  product: ProductInt, selectedSize: number, selectedSouse: number, showAlert: () => void, 
+  productsInCart: ProductAddedInt[], quantity: number, card: boolean) => {
   const dispatch = useDispatch();
 
   function add() {
@@ -29,7 +30,7 @@ export const useAddProduct = (
 
     showAlert();
     
-    if (productsInCart.some((pizza: any) => pizza.id === copyProduct.id)) {
+    if (productsInCart.some((product: ProductAddedInt) => product.id === copyProduct.id)) {
       if (!card) {
         dispatch(increment(copyProduct.id));
       }

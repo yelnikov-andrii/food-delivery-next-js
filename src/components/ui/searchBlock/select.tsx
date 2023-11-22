@@ -1,8 +1,15 @@
 'use client';
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import styles from './search.module.scss';
 
-export const Select: React.FC <any> = ({ options, defaultField, setSelectedOption, selectedOption }) => {
+interface Props {
+  options: string[];
+  defaultField: string;
+  selectedOption: string;
+  setSelectedOption: Dispatch<SetStateAction<string>>;
+}
+
+export const Select: React.FC <Props> = ({ options, defaultField, setSelectedOption, selectedOption }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const toggleDropdown = () => {
@@ -27,8 +34,6 @@ export const Select: React.FC <any> = ({ options, defaultField, setSelectedOptio
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  console.log(isOpen);
 
   return (
     <div 

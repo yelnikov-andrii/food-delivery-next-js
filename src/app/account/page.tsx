@@ -1,4 +1,4 @@
-// import { AccountWrapper } from '@/components/account/AccountWrapper';
+import { AccountWrapper } from '@/components/account/AccountWrapper';
 import React from 'react';
 
 export default function Account() {
@@ -7,7 +7,7 @@ export default function Account() {
       <h1 className='personalAccount__title'>
         Особистий кабінет
       </h1>
-      {/* <AccountWrapper /> */}
+      <AccountWrapper />
     </div>
   );
 }

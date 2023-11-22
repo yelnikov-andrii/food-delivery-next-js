@@ -2,8 +2,13 @@
 import React from 'react';
 import styles from './product.module.scss';
 import Dropdown from '../../ui/myDropdown/dropdown';
+import { ProductInt } from '@/types';
 
-export const ProductCardMainInfo: React.FC <any> = ({product}) => {
+interface Props {
+  product: ProductInt;
+}
+
+export const ProductCardMainInfo: React.FC <Props> = ({product}) => {
   return (
     <div className={styles.product__mainInfo}>
       <div>

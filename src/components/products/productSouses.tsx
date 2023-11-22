@@ -1,8 +1,9 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import styles from './product.module.scss';
+import { ProductInt } from '@/types';
 
 interface Props {
-  product: any;
+  product: ProductInt;
   selectedSouse: number;
   setSelectedSouse: Dispatch<SetStateAction<number>>;
 }
