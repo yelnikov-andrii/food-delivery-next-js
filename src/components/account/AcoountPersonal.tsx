@@ -1,8 +1,8 @@
 'use client';
 import { useOrders } from '@/api/services/orders/useOrders';
 import React from 'react'
-import { Loading } from '../ui/loading/loading';
-import Link from 'next/link';
+// import { Loading } from '../ui/loading/loading';
+// import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { useRouter } from 'next/navigation';
 
@@ -15,13 +15,14 @@ export const AcoountPersonal = () => {
   if (!auth) {
     router.push('/login');
   }
+
   return (
     <div>
       <h5 className='personalAccount__ordersTitle'>
         {ordersNormalized && ordersNormalized.length > 0 
           ? 'Ваші замовлення' : ordersLoading === true ? 'Завантаження' : 'Замовлень немає'}
       </h5>
-      {ordersLoading === true ? (
+      {/* {ordersLoading === true ? (
         <Loading />
       ) : (
         <div>
@@ -31,7 +32,7 @@ export const AcoountPersonal = () => {
             </Link>
           ))}
         </div>
-      )}
+      )} */}
     </div>
   )
 }
