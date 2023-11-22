@@ -9,12 +9,16 @@ import { setUser } from '@/redux/slices/authSlice';
 
 export const useOrders = () => {
   const user = useSelector((state: any) => state.auth.user);
-  const accessToken = localStorage.getItem('accessToken');
+  let accessToken = '';
   const [orders, setOrders] = React.useState([]);
   const [ordersError, setOrdersError] = React.useState('');
   const [ordersLoading, setOrdersLoading] = React.useState(false);
   const { refresh } = useCheckAuth();
   const dispatch = useDispatch();
+
+  if (typeof window !== 'undefined') {
+    accessToken += localStorage.getItem('accessToken');
+  }
 
   React.useEffect(() => {
     setOrdersLoading(true);
@@ -23,46 +27,48 @@ export const useOrders = () => {
       return;
     }
 
-    axios.get(`${url}/orders/?email=${user.email}`, {
-      headers:{
-        Authorization: `Bearer ${accessToken}`,
-      },
-    })
-      .then(response => {
-        setOrders(response.data);
-      })
-      .catch( (e) => {
-        if (e.response.status === 401) {
-          refresh()
-            .then(() => {
-              const accessToken = localStorage.getItem('accessToken');
-              axios.get(`${url}/orders/?email=${user.email}`, {
-                headers:{
-                  Authorization: `Bearer ${accessToken}`,
-                },
-                withCredentials: true,
-              })
-                .then(response => {
-                  setOrders(response.data);
-                  setOrdersLoading(true);
+      if (typeof window !== undefined) {
+        axios.get(`${url}/orders/?email=${user.email}`, {
+          headers:{
+            Authorization: `Bearer ${accessToken}`,
+          },
+        })
+        .then(response => {
+          setOrders(response.data);
+        })
+        .catch( (e) => {
+          if (e.response.status === 401) {
+            refresh()
+              .then(() => {
+                const accessToken = localStorage.getItem('accessToken');
+                axios.get(`${url}/orders/?email=${user.email}`, {
+                  headers:{
+                    Authorization: `Bearer ${accessToken}`,
+                  },
+                  withCredentials: true,
                 })
-                .catch((e) => {
-                  if (e.response.status === 401) {
-                    dispatch(setUser(null));
-                    localStorage.setItem('accessToken', '');
-                  }
-                  setOrdersError(e.response.data.message);
-                  setOrdersLoading(false);
-                })
-                .finally(() => {
-                  setOrdersLoading(false);
-                });
-            });
-        }
-      })
-      .finally(() => {
-        setOrdersLoading(false);
-      });
+                  .then(response => {
+                    setOrders(response.data);
+                    setOrdersLoading(true);
+                  })
+                  .catch((e) => {
+                    if (e.response.status === 401) {
+                      dispatch(setUser(null));
+                      localStorage.setItem('accessToken', '');
+                    }
+                    setOrdersError(e.response.data.message);
+                    setOrdersLoading(false);
+                  })
+                  .finally(() => {
+                    setOrdersLoading(false);
+                  });
+              });
+          }
+        })
+        .finally(() => {
+          setOrdersLoading(false);
+        });
+      }
   }, []);
 
   const ordersNormalized = orders.map((order: any) => {
