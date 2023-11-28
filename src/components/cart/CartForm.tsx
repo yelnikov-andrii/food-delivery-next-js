@@ -6,6 +6,7 @@ import { useSendData } from '../../hooks/useSendData';
 import styles from './cart.module.scss';
 import { clearCart } from '@/redux/slices/productSlice';
 import { RootState } from '@/redux/store';
+import { useSession } from 'next-auth/react';
 
 interface Props {
   setFilled: Dispatch<SetStateAction<boolean>>;
@@ -17,10 +18,10 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
   const [address, setAddress] = React.useState('');
 
   const productsInCart = useSelector((state: RootState) => state.product.products);
-  const user = useSelector((state: RootState) => state.auth.user);
   const products = useNormalizeProducts(productsInCart);
   const dispatch = useDispatch();
   const { sendData } = useSendData();
+  const { data: session } = useSession();
 
   function submit() {
     setName('');
@@ -36,7 +37,7 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
       className={styles.cart__form} 
       onSubmit={(e) => {
         e.preventDefault();
-        sendData({name, phone, address, products, email: user ? user.email : null }, `${url}/orders`, submit);
+        sendData({name, phone, address, products, email: session?.user?.email || null }, `${url}/orders`, submit);
       }}
     >
       <div 
