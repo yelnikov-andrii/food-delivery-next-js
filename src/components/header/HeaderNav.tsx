@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useLogout } from '@/api/services/auth/useLogOut';
 import { navLinks, phones } from '@/app/../data/headerData';
 import { NavLink } from '@/app/../types';
 import Link from 'next/link';
@@ -25,13 +24,8 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
   const countOfProducts = useGetCountOfProducts();
   const { data: session }: any = useSession();
 
-  // React.useEffect(() => {
-  //   accessToken = localStorage.getItem('accessToken');
-  // }, [])
-
   const productsInCart = useSelector((state: RootState) => state.product.products);
   const dispatch = useDispatch();
-  const { refresh } = useCheckAuth();
 
   React.useEffect(() => {
     const productsFromStorage = localStorage.getItem('productsInCart') 
@@ -39,7 +33,6 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
     if (productsFromStorage) {
       dispatch(getProducts(productsFromStorage));
     }
-    refresh();
   }, []);
 
   React.useEffect(() => {
@@ -120,7 +113,7 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
             Вийти
           </a>
           <Link 
-            href="/account"
+            href="/dashboard"
             className={styles.headerNav__link}
           >
               Кабінет особистий

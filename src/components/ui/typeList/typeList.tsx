@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import styles from './typelist.module.scss';
+import clsx from 'clsx';
 
 interface Props {
   setFilterType: Dispatch<SetStateAction<string>>;
@@ -20,7 +21,10 @@ export const TypeList: React.FC <Props> = ({ setFilterType, filterType, types, s
             setFilterType(type);
             setPage(1);
           }}
-          className={filterType !== type ? styles.typelist__item : styles.typelist__item + ' ' + styles['typelist__item--active']}
+          className={clsx({
+            [styles.typelist__item]: filterType !== type,
+            [styles.typelist__item + ' ' + styles['typelist__item--active']]: filterType === type
+          })}
         >
           {type}
         </div>

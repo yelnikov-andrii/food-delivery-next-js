@@ -12,7 +12,10 @@ export default function page() {
         </h1>
         <div className={styles.blog__block}>
           {blogArr.map(blog => (
-            <BlogArticle blog={blog} key={blog.article} />
+            <BlogArticle 
+              blog={blog} 
+              key={blog.article} 
+            />
           ))}
         </div>
       </div>

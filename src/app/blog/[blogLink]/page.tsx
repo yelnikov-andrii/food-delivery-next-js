@@ -9,6 +9,7 @@ export default function BlogItem({
   params: { blogLink: string }
 }) {
   const blog = blogArr.find(blog => blog.link === blogLink);
+  
   return (
       <div className={styles.blogItem}>
         <div className="container">
