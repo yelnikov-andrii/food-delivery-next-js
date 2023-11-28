@@ -2,7 +2,6 @@
 import React from 'react';
 import axios from 'axios';
 import { url } from '@/api';
-import { setUser } from '@/redux/slices/authSlice';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
