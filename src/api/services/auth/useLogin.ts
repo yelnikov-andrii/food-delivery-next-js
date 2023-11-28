@@ -7,7 +7,7 @@ import { setUser } from '@/redux/slices/authSlice';
 import { useRouter } from 'next/navigation';
 import { url } from '@/api';
 
-export const useLogin = ({email, password}: UserAuth) => {
+export const useLogin = ({ email, password }: UserAuth) => {
   const [error, setError] = React.useState('');
   const [emailErrorRequest, setEmailErrorRequest] = React.useState('');
   const [passwordErrorRequest, setPasswordErrorRequest] = React.useState('');
@@ -18,11 +18,12 @@ export const useLogin = ({email, password}: UserAuth) => {
     setEmailErrorRequest('');
     setPasswordErrorRequest('');
     setError('');
+    axios.defaults.withCredentials = true;
     axios.post(`${url}/login`, {email, password})
       .then(response => {
         dispatch(setUser(response.data.user));
         localStorage.setItem('accessToken', response.data.accessToken);
-        navigation.push('/personal-account');
+        navigation.push('/account');
       })
       .catch((e) => {
         setError(e.response.data.message);

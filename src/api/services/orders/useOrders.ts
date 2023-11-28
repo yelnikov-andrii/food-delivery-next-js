@@ -1,75 +1,38 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 import { useCheckAuth } from '../auth/useCheckAuth';
 import { url } from '@/api';
-import { setUser } from '@/redux/slices/authSlice';
+import { useSession } from 'next-auth/react';
 
 export const useOrders = () => {
-  const user = useSelector((state: any) => state.auth.user);
-  let accessToken = '';
+  const { data: session }: any = useSession();
+
   const [orders, setOrders] = React.useState([]);
   const [ordersError, setOrdersError] = React.useState('');
   const [ordersLoading, setOrdersLoading] = React.useState(false);
-  const { refresh } = useCheckAuth();
-  const dispatch = useDispatch();
-
-  if (typeof window !== 'undefined') {
-    accessToken += localStorage.getItem('accessToken');
-  }
 
   React.useEffect(() => {
     setOrdersLoading(true);
-    if (!user) {
+    if (!session?.user?.user) {
       setOrdersLoading(false);
       return;
     }
 
-      if (typeof window !== undefined) {
-        axios.get(`${url}/orders/?email=${user.email}`, {
-          headers:{
-            Authorization: `Bearer ${accessToken}`,
-          },
-        })
-        .then(response => {
-          setOrders(response.data);
-        })
-        .catch( (e) => {
-          if (e.response.status === 401) {
-            refresh()
-              .then(() => {
-                const accessToken = localStorage.getItem('accessToken');
-                axios.get(`${url}/orders/?email=${user.email}`, {
-                  headers:{
-                    Authorization: `Bearer ${accessToken}`,
-                  },
-                  withCredentials: true,
-                })
-                  .then(response => {
-                    setOrders(response.data);
-                    setOrdersLoading(true);
-                  })
-                  .catch((e) => {
-                    if (e.response.status === 401) {
-                      dispatch(setUser(null));
-                      localStorage.setItem('accessToken', '');
-                    }
-                    setOrdersError(e.response.data.message);
-                    setOrdersLoading(false);
-                  })
-                  .finally(() => {
-                    setOrdersLoading(false);
-                  });
-              });
-          }
-        })
-        .finally(() => {
-          setOrdersLoading(false);
-        });
-      }
-  }, []);
+      axios.get(`${url}/orders/?email=${session?.user?.user?.email}`, {
+        headers:{
+          Authorization: `Bearer ${session?.user?.accessToken}`,
+        },
+      })
+      .then(response => {
+        setOrders(response.data);
+      })
+      .catch( (e) => {
+      })
+      .finally(() => {
+        setOrdersLoading(false);
+      });
+  }, [session]);
 
   const ordersNormalized = orders.map((order: any) => {
     const date = new Date(order.createdAt);

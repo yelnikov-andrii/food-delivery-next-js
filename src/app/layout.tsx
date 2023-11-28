@@ -3,6 +3,9 @@ import './globals.css';
 import  Header from '../components/header/page';
 import Footer from '../components/footer/page';
 import styles from './layout.module.scss';
+import { Providers } from '@/components/providers/Provider';
+import { Provider } from 'react-redux';
+import { store } from '@/redux/store';
 
 export const metadata: Metadata = {
   title: 'Food delivery',
@@ -17,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
+        <Providers>
+          <Header />
           <div className={styles.container}>
             {children}
           </div>
-          <Footer />
+        <Footer />
+        </Providers>
       </body>
     </html>
   )

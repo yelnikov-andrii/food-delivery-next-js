@@ -90,6 +90,7 @@
     text-decoration: none;
     font-weight: 600;
     color: $primaryColor;
+    cursor: pointer;
 
     &:hover {
       color: $hoverColor;
@@ -147,4 +148,4 @@
       }
     }
   }
-}
+} 

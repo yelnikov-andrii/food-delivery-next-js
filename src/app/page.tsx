@@ -14,8 +14,6 @@ export default async function Home() {
   const mangal = await getProductsByCategory(6);
   const soupes = await getProductsByCategory(7);
 
-  console.log(pizzas);
-
   return (
     <div 
       className='main'

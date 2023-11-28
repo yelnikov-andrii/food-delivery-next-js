@@ -5,11 +5,21 @@ import { LoginEmail } from './loginEmail';
 import { LoginPassword } from './loginPassword';
 import { LoginUnauthorized } from './loginUnauthorized';
 import { useLogin } from '@/api/services/auth/useLogin';
+import { signIn } from 'next-auth/react';
 
 export const LoginBlock = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
-  const { login, error, emailErrorRequest, passwordErrorRequest } = useLogin({ email, password });
+  // const { login, error, emailErrorRequest, passwordErrorRequest } = useLogin({ email, password });
+  async function login() {
+    const res = await signIn('credentials', {
+      email,
+      password,
+      redirect: true,
+      callbackUrl: '/account'
+    });
+  }
+
   return (
     <div className={styles.login__block}>
       <form 
@@ -22,12 +32,14 @@ export const LoginBlock = () => {
         <LoginEmail 
           email={email} 
           setEmail={setEmail} 
-          emailErrorRequest={emailErrorRequest}
+          // emailErrorRequest={emailErrorRequest}
+          emailErrorRequest=""
         />
         <LoginPassword 
           password={password}
           setPassword={setPassword}
-          passwordErrorRequest={passwordErrorRequest}
+          // passwordErrorRequest={passwordErrorRequest}
+          passwordErrorRequest=""
         />
         <div className={styles.login__buttonWrapper}>
         <button
@@ -40,7 +52,7 @@ export const LoginBlock = () => {
       </form>
       <LoginUnauthorized />
       <p className={styles.login__error}>
-        {error}
+        
       </p>
     </div>
   );

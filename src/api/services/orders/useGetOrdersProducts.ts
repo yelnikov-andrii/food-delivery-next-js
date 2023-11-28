@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { url } from '@/api';
-import { ProductInt } from '@/types';
+import { ProductAddedInt, ProductInt } from '@/types';
 import axios from 'axios';
 import React from 'react';
 
@@ -11,7 +11,7 @@ interface Order {
 
 export const useGetOrdersProducts = (order: Order) => {
   const [initialProducts, setInitialProducts] = React.useState<any[]>([]);
-  const [products, setProducts] = React.useState<ProductInt[]>([]);
+  const [products, setProducts] = React.useState<ProductAddedInt[]>([]);
 
   async function getProduct(id: number) {
     return axios.get(`${url}/products/${id}`)

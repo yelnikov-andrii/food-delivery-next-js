@@ -12,6 +12,7 @@ import { useGetCountOfProducts } from '@/app/../hooks/useGetCountOfProducts';
 import { useCheckAuth } from '../../api/services/auth/useCheckAuth';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
 import { RootState } from '@/redux/store';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 interface Props {
   setShow: Dispatch<SetStateAction<boolean>>;
@@ -20,16 +21,13 @@ interface Props {
 }
 
 export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) => {
-  const user = useSelector((state: RootState) => state.auth.user);
   const handleShow = () => setShow(true);
   const countOfProducts = useGetCountOfProducts();
-  let accessToken = null;
+  const { data: session }: any = useSession();
 
-  const { logout } = useLogout();
-
-  React.useEffect(() => {
-    accessToken = localStorage.getItem('accessToken');
-  }, [])
+  // React.useEffect(() => {
+  //   accessToken = localStorage.getItem('accessToken');
+  // }, [])
 
   const productsInCart = useSelector((state: RootState) => state.product.products);
   const dispatch = useDispatch();
@@ -111,36 +109,32 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
           Замовити дзвінок
         </button>
       </div>
-      {!accessToken ? (
+      {session && session.user ? (
         <div className={styles.headerNav__auth}>
-          <Link 
-            href="/login"
+          <a 
+            onClick={(e) => {
+              signOut();
+            }}
             className={styles.headerNav__link}
           >
-            Логін
-          </Link>
-          <Link 
-            href="/registration"
-            className={styles.headerNav__link}
-          >
-            Реєстрація
-          </Link>
-        </div>
-      ) : (
-        <div className={styles.headerNav__auth}>
-          <div onClick={(e) => {
-            e.preventDefault();
-            logout();
-          }}>
             Вийти
-          </div>
+          </a>
           <Link 
-            href="/personal-account"
+            href="/account"
             className={styles.headerNav__link}
           >
               Кабінет особистий
           </Link>
         </div>
+      ) : (
+          <a 
+            onClick={() => {
+              signIn()
+            }}
+            className={styles.headerNav__link}
+          >
+            Увійти
+          </a>
       )}
       <Link 
         href="/cart"

@@ -1,0 +1,15 @@
+.login {
+  padding: 20px 0;
+
+  &__title {
+    font-size: 48px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0 0 20px 0;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+}
