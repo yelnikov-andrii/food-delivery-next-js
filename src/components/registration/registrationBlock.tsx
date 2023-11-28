@@ -62,7 +62,7 @@ export const RegistrationBlock = () => {
         <button
           type="submit"
           disabled={!passwordIsValid}
-          className={styles.registration__button}
+          className={!passwordIsValid ? styles.registration__button + ' ' + styles['registration__button--disabled'] : styles.registration__button}
         >
           Зареєструватися
         </button>

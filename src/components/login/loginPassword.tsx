@@ -25,7 +25,7 @@ export const LoginPassword: React.FC <Props> = ({ password, setPassword, passwor
       <input 
         type="password" 
         placeholder="Пароль"
-        className={passwordError || passwordErrorRequest ? styles['login__input login__input--error'] : styles.login__input}
+        className={(passwordError || passwordErrorRequest) && passwordIsDirty ? styles['login__input'] + ' ' + styles['login__input--error'] : styles.login__input}
         required
         value={password}
         onBlur={() => {

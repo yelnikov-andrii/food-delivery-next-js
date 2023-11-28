@@ -95,5 +95,15 @@
     &:hover {
       color: $hoverColor;
     }
+
+    &--disabled {
+      opacity: 0.5;
+
+      &:hover {
+        color: $primaryColor;
+        background: $secondaryColor;
+        cursor: auto;
+      }
+    }
   }
 }

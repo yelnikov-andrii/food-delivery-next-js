@@ -24,7 +24,7 @@ export const LoginEmail: React.FC <Props> = ({ email, setEmail, emailErrorReques
       <input 
         type="email" 
         placeholder="Email"
-        className={emailError || emailErrorRequest ? styles['login__input login__input--error'] : styles.login__input}
+        className={(emailError || emailErrorRequest) && emailIsDirty ? styles['login__input'] + ' ' + styles['login__input--error'] : styles.login__input}
         required
         value={email}
         onBlur={() => {

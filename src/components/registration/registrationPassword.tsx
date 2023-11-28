@@ -30,7 +30,7 @@ export const RegistrationPassword: React.FC <Props> = ({
         placeholder="Пароль"
         required
         value={password}
-        className={passwordError && passwordIsDirty ? styles['registration__input registration__input--error'] : styles.registration__input}
+        className={passwordError && passwordIsDirty ? styles['registration__input'] + ' ' + styles['registration__input--error'] : styles.registration__input}
         onBlur={() => {
           setPasswordIsDirty(true);
         }}

@@ -30,7 +30,7 @@ export const RegistrationEmail: React.FC <Props> = ({email, setEmail, emailError
         placeholder="Email"
         required
         value={email}
-        className={emailError || emailErrorRequest ? styles['registration__input '] + styles['registration__input--error'] : styles.registration__input}
+        className={(emailError || emailErrorRequest) && emailIsDirty ? styles['registration__input'] + ' ' + styles['registration__input--error'] : styles.registration__input}
         onBlur={() => {
           setEmailIsDirty(true);
         }}

@@ -43,11 +43,9 @@
     outline: none;
 
     &--error {
-      &.form-control {
-        color: red;
+      color: red;
       border-color: red;
       box-shadow: red;
-      }
     }
   }
 
