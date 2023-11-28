@@ -15,7 +15,7 @@ export const LoginBlock = () => {
       email,
       password,
       redirect: true,
-      callbackUrl: '/dashboard'
+      callbackUrl: '/account'
     });
   }
 

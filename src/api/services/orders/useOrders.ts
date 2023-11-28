@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import axios from 'axios';
-import { useCheckAuth } from '../auth/useCheckAuth';
 import { url } from '@/api';
 import { useSession } from 'next-auth/react';
 
