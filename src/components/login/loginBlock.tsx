@@ -4,7 +4,6 @@ import styles from './login.module.scss';
 import { LoginEmail } from './loginEmail';
 import { LoginPassword } from './loginPassword';
 import { LoginUnauthorized } from './loginUnauthorized';
-import { useLogin } from '@/api/services/auth/useLogin';
 import { signIn } from 'next-auth/react';
 
 export const LoginBlock = () => {
@@ -16,7 +15,7 @@ export const LoginBlock = () => {
       email,
       password,
       redirect: true,
-      callbackUrl: '/account'
+      callbackUrl: '/dashboard'
     });
   }
 
