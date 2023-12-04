@@ -113,7 +113,7 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
             Вийти
           </a>
           <Link 
-            href="/dashboard"
+            href="/account"
             className={styles.headerNav__link}
           >
               Кабінет особистий
