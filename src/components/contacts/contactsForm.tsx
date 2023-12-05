@@ -11,7 +11,7 @@ interface Props {
 
 export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
   const [name, setName] = React.useState('');
-  const [number, setNumber] = React.useState('');
+  const [number, setNumber] = React.useState('+380');
   const [message, setMessage] = React.useState('');
   const [email, setEmail] = React.useState('');
   const {emailError, emailHandler} = useEmailHandler(setEmail);
@@ -62,16 +62,17 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
           Телефон
         </label>
         <input 
-          type="text" 
+          type="phone"
           placeholder="Телефон"
-          required
           value={number}
-          className={styles.contactsForm__input}
           onChange={(e) => {
             if (!isNaN(+e.target.value)) {
-              setNumber(e.target.value);
+              if (e.target.value.length <= 13) {
+                setNumber(e.target.value);
+              }
             }
           }}
+          className={styles.contactsForm__input}
         />
       </div>
       <div 

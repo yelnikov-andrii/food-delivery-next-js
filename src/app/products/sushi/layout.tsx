@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function Sushilayout({ children }: {children: React.ReactNode}) {
   return (
-    <div>
+    <div className='container'>
       {children}
     </div>
   )

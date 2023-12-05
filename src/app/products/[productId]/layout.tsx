@@ -4,7 +4,7 @@ export default function ProductItemLayout({ children, params }: {children: React
   productId: string;
 }}) {
   return (
-    <div>
+    <div className='container'>
       {children}
     </div>
   )

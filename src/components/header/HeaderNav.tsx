@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from './headernav.module.scss';
 import { getProducts } from '@/redux/slices/productSlice';
 import { useGetCountOfProducts } from '@/app/../hooks/useGetCountOfProducts';
-import { useCheckAuth } from '../../api/services/auth/useCheckAuth';
 import Dropdown from '../../components/ui/myDropdown/dropdown';
 import { RootState } from '@/redux/store';
 import { signIn, signOut, useSession } from 'next-auth/react';

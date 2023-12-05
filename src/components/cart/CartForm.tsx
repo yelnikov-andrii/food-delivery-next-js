@@ -14,7 +14,7 @@ interface Props {
 
 export const CartForm: React.FC <Props> = ({ setFilled }) => {
   const[name, setName] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+  const [phone, setPhone] = React.useState('+380');
   const [address, setAddress] = React.useState('');
 
   const productsInCart = useSelector((state: RootState) => state.product.products);
@@ -68,14 +68,16 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
           Телефон
         </label>
         <input 
-          type="text"
-          required
+          type="phone"
           placeholder="Телефон"
+          required
           className={styles.cart__input}
           value={phone} 
           onChange={(e) => {
             if (!isNaN(+e.target.value)) {
-              setPhone(e.target.value);
+              if (e.target.value.length <= 13) {
+                setPhone(e.target.value);
+              }
             }
           }}
         />

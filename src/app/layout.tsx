@@ -4,6 +4,7 @@ import  Header from '../components/header/page';
 import Footer from '../components/footer/page';
 import styles from './layout.module.scss';
 import { Providers } from '@/components/providers/Provider';
+import { UpButton } from '@/components/ui/upbutton/UpButton';
 
 export const metadata: Metadata = {
   title: 'Food delivery',
@@ -23,6 +24,7 @@ export default function RootLayout({
           <div className={styles.container}>
             {children}
           </div>
+          <UpButton />
           <Footer />
         </Providers>
       </body>
