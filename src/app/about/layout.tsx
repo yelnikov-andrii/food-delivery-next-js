@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function AblutLayout({ children }: {children: React.ReactNode}) {
   return (
-    <div>
+    <div className='main'>
       {children}
     </div>
   )

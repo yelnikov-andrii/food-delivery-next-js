@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function PizzasLayout({ children }: {children: React.ReactNode}) {
   return (
-    <div className='container'>
+    <div className='container main'>
       {children}
     </div>
   )

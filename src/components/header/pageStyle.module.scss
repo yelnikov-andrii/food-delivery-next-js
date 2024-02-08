@@ -10,6 +10,16 @@
   color: $primaryColor;
   text-decoration: none;
   background-color: $secondaryColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  transition: all 0.6s ease;
+
+  &--scrolled {
+    top: -100%;
+  }
 
   &__menu {
     display: none;

@@ -10,10 +10,32 @@ import styles from './pageStyle.module.scss';
 export default function Header() {
   const [show, setShow] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [scrollDirection, setScrollDirection] = React.useState<string>('up');
+  const [prevScrollY, setPrevScrollY] = React.useState<number>(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > prevScrollY) {
+        setScrollDirection('down');
+      } else if (currentScrollY < prevScrollY) {
+        setScrollDirection('up');
+      }
+
+      setPrevScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [prevScrollY]);
 
   return (
     <Provider store={store}>
-      <header className={styles.header}>
+      <header className={scrollDirection === 'down' ? styles.header + ' ' + styles['header--scrolled'] : styles.header}>
       <div className={styles.header__block}>
         <Link
           href="/"

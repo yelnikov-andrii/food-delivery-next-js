@@ -4,7 +4,7 @@ import React from 'react'
 export default function OrderPage({ params: { orderId } }: any) {
 
   return (
-    <div>
+    <div className='main'>
       <h2>
         Замовлення
       </h2>

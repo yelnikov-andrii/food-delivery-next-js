@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function DiscountsLayout({ children }: {children: React.ReactNode}) {
   return (
-    <div>
+    <div className='main'>
       {children}
     </div>
   )

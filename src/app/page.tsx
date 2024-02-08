@@ -43,7 +43,6 @@ export default async function Home() {
             ))}
           </MainProduct>
         ))}
-          {/* <UpButton /> */}
     </div>
   );
 }

@@ -5,10 +5,8 @@ import styles from './loading.module.scss';
 
 export const Loading = () => {
   return (
-    <div className={styles.loading}>
-      <h1>
-        Завантаження...
-      </h1>
+    <div className='main'>
+      <div className={styles.loading}>
       <Oval
         height={40}
         width={40}
@@ -20,6 +18,7 @@ export const Loading = () => {
         strokeWidth={2}
         strokeWidthSecondary={2}
       />
+    </div>
     </div>
   );
 };
