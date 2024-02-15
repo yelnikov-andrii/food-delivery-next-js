@@ -4,14 +4,15 @@
   right: 0;
   bottom: 0;
   position: fixed;
-  display: none;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 3;
+  animation: fadeIn 0.3s;
 
   &__hidden {
+    opacity: 0;
     display: none;
   }
 
@@ -21,5 +22,14 @@
     max-width: 500px;
     border-radius: 16px;
     width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
