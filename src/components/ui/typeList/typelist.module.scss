@@ -8,28 +8,31 @@
 
   &__item {
     padding: 5px 10px;
-    border: 1px solid teal;
+    font-size: 16px;
+    font-weight: 600;
     color: $primaryColor;
     background: $secondaryColor;
     border-radius: 4px;
     cursor: pointer;
+    border: 1px solid teal;
+    height: 40px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    &:hover {
-      color: $hoverColor;
-      background: $secondaryColor;
-      border: 1px solid teal;
+      &:hover {
+        background: lighten($secondaryColor, 10%);
+        color: $hoverColor;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
 
     &--active {
-      background: $hoverColor;
-      border: none;
-      color: #333;
-
-      &:hover {
-        background: $hoverColor;
-        border: none;
-        color: #333;
-      }
+      background: lighten($secondaryColor, 10%);
+      color: $hoverColor;
+      border: 1px solid teal;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* добавляем тень */
+      transition: box-shadow 0.3s; 
     }
   }
 }
