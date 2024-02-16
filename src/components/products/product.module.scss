@@ -99,6 +99,7 @@
     min-width: 160px;
     cursor: pointer;
     border-radius: 8px;
+    transition: color 0.3s ease;
 
     &:hover {
       color: $hoverColor;
@@ -128,6 +129,13 @@
     height: 40px;
     cursor: pointer;
     border-radius: 8px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      background: lighten($secondaryColor, 10%);
+      color: $hoverColor;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
   }
 
   &__txtStrong {
@@ -152,9 +160,13 @@
     font-size: 16px;
     font-weight: 500;
     color: #000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
 
     &--hidden {
-      display: none;
+      opacity: 0;
+      transform: translateY(-20px);
     }
   }
 }
