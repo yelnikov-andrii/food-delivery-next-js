@@ -47,6 +47,8 @@
     border-collapse: collapse;
     border: 1px solid $primaryColor;
     margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 500;
   }
 
   &__tableRow {
@@ -117,6 +119,8 @@
     height: auto;
     background: transparent;
     border: none;
+    font-size: 18px;
+    font-weight: 500;
   }
 
   &__form {
