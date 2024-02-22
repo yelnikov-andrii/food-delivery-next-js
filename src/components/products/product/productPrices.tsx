@@ -1,5 +1,6 @@
 'use client';import { ProductInt } from '@/types';
 import React from 'react';
+import styles from './product.module.scss';
 
 interface Props {
   product: ProductInt;
@@ -10,7 +11,7 @@ export const ProductPrices: React.FC <Props> = ({ product, selectedSize }) => {
   return (
     <div>
       {product.prices && (
-        <strong className='productCard__price'>
+        <strong className={styles.product__price}>
         {`${product.prices[selectedSize]} грн.`}
       </strong>
       )}

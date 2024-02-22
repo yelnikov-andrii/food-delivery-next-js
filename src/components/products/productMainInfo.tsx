@@ -6,12 +6,13 @@ import { ProductInt } from '@/types';
 
 interface Props {
   product: ProductInt;
+  link: string;
 }
 
-export const ProductMainInfo: React.FC <Props> = ({ product }) => {
+export const ProductMainInfo: React.FC <Props> = ({ product, link }) => {
   return (
     <div className={styles.product__mainInfo}>
-      <Link href={product.id.toString()} >
+      <Link href={link}>
         <h2 className={styles.product__name}>
           {product.name}
         </h2>

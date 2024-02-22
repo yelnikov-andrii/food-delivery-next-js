@@ -42,7 +42,6 @@
     color: $primaryColor;
     transition: all 0.3s ease;
     position: relative;
-    width: max-content;
 
     &::after {
       content: '';
@@ -102,21 +101,15 @@
     transition: color 0.3s ease;
 
     &:hover {
+      background: lighten($secondaryColor, 20%);
       color: $hoverColor;
-      background: $secondaryColor;
-      border: 1px solid teal;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
 
     &--active {
-      background: $hoverColor;
-      border: none;
-      color: #333;
-
-      &:hover {
-        background: $hoverColor;
-        border: none;
-        color: #333;
-      }
+      background: lighten($secondaryColor, 20%);
+      color: $hoverColor;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -151,6 +144,7 @@
 
   &__price {
     font-size: 20px;
+    color: $primaryColor;
   }
 
   &__alert {

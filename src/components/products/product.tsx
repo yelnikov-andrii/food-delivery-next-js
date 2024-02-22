@@ -40,7 +40,8 @@ export const Product: React.FC <Props> = ({ product, link }) => {
       </Link>
       <div>
         <ProductMainInfo 
-          product={product} 
+          product={product}
+          link={link || product.id.toString()}
         />
         {(product.weight || product.count) && (
           <ProductWeightOrCount
