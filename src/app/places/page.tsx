@@ -6,7 +6,7 @@ import styles from './page.module.scss';
 export default function Places() {
   return (
     <div className={styles.places}>
-      <h1>
+      <h1 className={styles.places__title}>
         Наші заклади
       </h1>
       <div className={styles.places__block}>

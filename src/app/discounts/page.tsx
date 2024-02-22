@@ -6,7 +6,7 @@ export default function Discounts() {
   return (
     <section className={styles.discounts}>
       <div className="container">
-        <h1>
+        <h1 className={styles.discounts__title}>
           Акції
         </h1>
         <div className={styles.discounts__block}>

@@ -184,7 +184,6 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
                 </div>
               ))
             )}
-            {/* <UpButton /> */}
           </div>
           <div>
             {page !== 1 && loading ? (

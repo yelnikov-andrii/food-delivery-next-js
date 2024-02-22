@@ -6,7 +6,7 @@ import styles from './page.module.scss';
 export default function Vacancies() {
   return (
     <div className={styles.vacancies}>
-      <h1>
+      <h1 className={styles.vacancies__title}>
         Вакансії
       </h1>
       <div className={styles.vacancies__block}>

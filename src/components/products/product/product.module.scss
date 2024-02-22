@@ -113,6 +113,8 @@
     background: #F1F1F2;
     border: none;
     text-indent: 5px;
+    font-weight: 600;
+    font-size: 18px;
 
     &:focus-visible {
       border: none;
@@ -127,6 +129,8 @@
     width: 60px;
     height: 60px;
     cursor: pointer;
+    font-weight: 600;
+    font-size: 20px;
 
     &--toCart {
       width: 180px;

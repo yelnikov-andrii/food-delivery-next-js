@@ -149,7 +149,33 @@
   }
 
   &__link {
+    color: teal;
     font-size: 14px;
     font-weight: 700;
+    text-align: center;
+    color: $primaryColor;
+    transition: all 0.3s ease;
+    width: 50%;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: $hoverColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: $hoverColor;
+
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }
