@@ -1,5 +1,4 @@
 import React from 'react'
-import { Loading } from '../components/ui/loading/loading';
 import ContentLoader from "react-content-loader";
 import styles from './loading.module.scss';
 
