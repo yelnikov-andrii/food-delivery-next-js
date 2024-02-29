@@ -1,0 +1,32 @@
+.loading {
+  padding: 120px 0;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 0 40px 0;
+
+    @media screen and (max-width: 1024px) {
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media screen and (max-width: 1024px) {
+      gap: 20px;
+      justify-content: center;
+    }
+  }
+}

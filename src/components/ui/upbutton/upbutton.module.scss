@@ -4,6 +4,11 @@
   right: 50px;
   z-index: 5;
 
+  @media screen and (max-width: 768px) {
+    bottom: 100px;
+    right: 30px;
+  }
+
   &__button {
     border-radius: 50%;
     border: none;

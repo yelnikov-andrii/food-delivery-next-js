@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function BlogItemLayout({ children }: {children: React.ReactNode}) {
   return (
-    <div className='main'>
+    <div>
       {children}
     </div>
   )
