@@ -16,7 +16,7 @@
     padding: 20px 5px 10px 0;
     border-bottom: 1px solid gray;
     z-index: 2;
-    transition: left 1s ease;
+    transition: left 0.4s ease;
   }
 
   &--closed {
@@ -35,7 +35,7 @@
       padding: 20px 0 10px 0;
       border-bottom: 1px solid gray;
       z-index: 2;
-      transition: all 1s ease;
+      transition: all 0.4s ease;
     }
   }
 
