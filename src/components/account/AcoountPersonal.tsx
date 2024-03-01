@@ -5,6 +5,7 @@ import { Loading } from '../ui/loading/loading';
 import Link from 'next/link';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
+import styles from './account.module.scss';
 
 
 export const AcoountPersonal = () => {
@@ -20,10 +21,12 @@ export const AcoountPersonal = () => {
       {ordersLoading === true ? (
         <Loading />
       ) : (
-        <div>
+        <div className={styles.account__orders}>
           {ordersNormalized && ordersNormalized.map((order: any) => (
-            <Link href={`account/orders/${order.id.toString()}`} key={order.id}>
-              <p>Дата замовлення: {order.createdAt.toUTCString().slice(0, -4)}</p>
+            <Link href={`account/orders/${order.id.toString()}`} key={order.id} className={styles.account__link}>
+              <p className={styles.account__p}>
+                Дата замовлення: {order.createdAt.toUTCString().slice(0, -4)}
+              </p>
             </Link>
           ))}
         </div>

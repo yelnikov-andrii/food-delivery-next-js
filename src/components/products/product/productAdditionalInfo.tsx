@@ -19,8 +19,6 @@ export const ProductAdditionalInfo: React.FC <Props> = ({ product }) => {
   const [selectedSize, setSelectedSize] = React.useState<number>(0);
   const [selectedSouse, setSelectedSouse] = React.useState<number>(0);
   const { show, showAlert } = useAlert();
-
-  console.log(product, 'product card')
   
   return (
     <Provider store={store}>

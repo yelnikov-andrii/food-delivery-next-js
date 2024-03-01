@@ -18,10 +18,7 @@ export const useOrders = () => {
       return;
     }
 
-      axios.get(`${url}/orders/?email=${session?.user?.user?.email}`, {
-        headers:{
-          Authorization: `Bearer ${session?.user?.accessToken}`,
-        },
+      axios.get(`${url}/orders?email=${session?.user?.user?.email}`, {
       })
       .then(response => {
         setOrders(response.data);

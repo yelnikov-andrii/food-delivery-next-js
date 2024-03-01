@@ -4,6 +4,7 @@ import { useOrder } from '@/api/services/orders/useOrder';
 import { useGetSum } from '@/hooks/useGetSum';
 import React from 'react';
 import { OrderTable } from './OrderTable';
+import styles from './order.module.scss';
 
 export const Order: React.FC <any> = ({ orderId }) => {
   const {order, orderLoading, orderError} = useOrder(orderId);
@@ -19,7 +20,7 @@ export const Order: React.FC <any> = ({ orderId }) => {
   }
 
   return (
-    <div className='order'>
+    <div className={styles.order}>
       {orderLoading === true ? (
         <div>
           Loading...
@@ -29,7 +30,7 @@ export const Order: React.FC <any> = ({ orderId }) => {
           {order && (
             <>
               <h1>{new Date(order.createdAt).toUTCString().slice(0, -4)}</h1>
-              <p>
+              <p className={styles.order__address}>
                 Адреса: {order.address}
               </p>
               Продукти:
@@ -37,7 +38,7 @@ export const Order: React.FC <any> = ({ orderId }) => {
                 initialProducts={initialProducts}
                 products={products}
               />
-              <p className='cart__sum'>
+              <p className={styles.order__sum}>
                 Сума замовлення: {sum} грн.
               </p>
             </>

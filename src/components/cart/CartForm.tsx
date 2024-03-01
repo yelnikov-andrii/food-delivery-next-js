@@ -21,7 +21,7 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
   const products = useNormalizeProducts(productsInCart);
   const dispatch = useDispatch();
   const { sendData } = useSendData();
-  const { data: session } = useSession();
+  const { data: session }: any = useSession();
 
   function submit() {
     setName('');
@@ -37,7 +37,7 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
       className={styles.cart__form} 
       onSubmit={(e) => {
         e.preventDefault();
-        sendData({name, phone, address, products, email: session?.user?.email || null }, `${url}/orders`, submit);
+        sendData({name, phone, address, products, email: session?.user?.user.email || null }, `${url}/orders`, submit);
       }}
     >
       <div 

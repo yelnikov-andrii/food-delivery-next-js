@@ -1,26 +1,27 @@
 'use client';
 import React from 'react';
+import styles from './order.module.scss';
 
 export const OrderTableHead = () => {
   return (
-    <thead>
-      <tr>
-        <th className='cart__photo'>
+    <thead className={styles.order__tableHead}>
+      <tr className={styles.order__tableHeadRow}>
+        <th className={styles.order__photo}>
           Фото
         </th>
         <th>
           Назва
         </th>
-        <th className='cart__size'>
+        <th className={styles.order__size}>
           Розмір
         </th>
-        <th className='cart__souse'>
+        <th className={styles.order__souse}>
           Соус
         </th>
-        <th className='cart__tablePrice'>
+        <th className={styles.order__tablePrice}>
           Ціна
         </th>
-        <th className='cart__quantity'>
+        <th className={styles.order__quantity}>
           Кількість
         </th>
         <th>

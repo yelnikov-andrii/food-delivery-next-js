@@ -1,6 +1,7 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
+import styles from './order.module.scss';
 
 export const OrderTableBody: React.FC <any> = ({initialProducts, products}) => {
   return (
@@ -8,27 +9,28 @@ export const OrderTableBody: React.FC <any> = ({initialProducts, products}) => {
       {products && products.map((product: any, index: number) => (
         <tr 
           key={product.id.toString() + index.toString()}
+          className={styles.order__tableRow}
         >
-          <td className='cart__photo'>
+          <td className={styles.order__photo}>
             <Image 
               src={product.img}
               width={80}
               height={80}
               alt="" 
-              className='cart__img'
+              layout='responsive'
             />
           </td>
           <td>
             {product.name}
           </td>
-          <td className='cart__size'>
+          <td className={styles.order__size}>
             {!initialProducts[index]?.hasOwnProperty('selectedSize') ? 
               '-' : initialProducts[index]?.selectedSize === 0 ? '32 см' : '42 см'}
           </td>
-          <td className='cart__souse'>
+          <td className={styles.order__souse}>
             {initialProducts[index]?.selectedSouse || '-'}
           </td>
-          <td className='cart__tablePrice'>
+          <td className={styles.order__tablePrice}>
             {(product.prices && product.prices[initialProducts[index]?.selectedSize]) || product.price}
           </td>
           <td>
