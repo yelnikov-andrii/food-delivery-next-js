@@ -105,7 +105,9 @@ export const HeaderNav: React.FC <Props> = ({ setShow, menuOpen, setMenuOpen }) 
         <div className={styles.headerNav__auth}>
           <a 
             onClick={(e) => {
-              signOut();
+              signOut({
+                callbackUrl:'/'
+              });
             }}
             className={styles.headerNav__link}
           >

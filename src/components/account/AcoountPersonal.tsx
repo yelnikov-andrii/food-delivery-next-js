@@ -13,7 +13,7 @@ export const AcoountPersonal = () => {
 
   return (
     <Provider store={store}>
-      <div>
+      <div className={styles.account}>
       <h5 className='personalAccount__ordersTitle'>
         {ordersNormalized && ordersNormalized.length > 0 
           ? 'Ваші замовлення' : ordersLoading === true ? 'Завантаження' : 'Замовлень немає'}
