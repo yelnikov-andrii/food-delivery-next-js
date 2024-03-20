@@ -35,3 +35,10 @@ export const categoriesArr = [
     link: 'soupes',
   },
 ];
+
+export const sortOptions = [
+  'За назвою А-Я',
+  'За назвою Я-А',
+  'За ціною від меншої до більшої',
+  'За ціною від більшої до меншої',
+];

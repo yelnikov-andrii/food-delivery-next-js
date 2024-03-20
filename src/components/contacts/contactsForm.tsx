@@ -4,6 +4,8 @@ import { useEmailHandler } from '@/hooks/useEmailHandler';
 import styles from './contacts.module.scss';
 import { useSendData } from '@/hooks/useSendData';
 import { url } from '@/api';
+import { ContactsFormInputBlock } from './contactsFormInputBloc';
+import { ContactFormInputEmail } from './contactFormInputEmail';
 
 interface Props {
   setFormIsSubmitted: Dispatch<SetStateAction<boolean>>;
@@ -26,6 +28,18 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
     setFormIsSubmitted(true);
   }
 
+  function changeName(e: any) {
+    setName(e.target.value);
+  }
+
+  function changePhone(e: any) {
+    if (!isNaN(+e.target.value)) {
+      if (e.target.value.length <= 13) {
+        setNumber(e.target.value);
+      }
+    }
+  }
+
   return (
     <form 
       className={styles.contactsForm} 
@@ -33,74 +47,30 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
         e.preventDefault();
         sendData({name, number, email, message}, `${url}/feedback`, submit);
       }}
-    >
-      <div 
-        className={styles.contactsForm__row} 
-      >
-        <label
-          className={styles.contactsForm__label}
-        >
-          Ім&apos;я
-        </label>
-        <input 
-          type="text" 
-          placeholder="Ім'я"
-          className={styles.contactsForm__input}
-          required
-          value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-      </div>
-      <div 
-        className={styles.contactsForm__row}
-      >
-        <label
-          className={styles.contactsForm__label}
-        >
-          Телефон
-        </label>
-        <input 
-          type="phone"
-          placeholder="Телефон"
-          value={number}
-          onChange={(e) => {
-            if (!isNaN(+e.target.value)) {
-              if (e.target.value.length <= 13) {
-                setNumber(e.target.value);
-              }
-            }
-          }}
-          className={styles.contactsForm__input}
-        />
-      </div>
-      <div 
-        className={styles.contactsForm__row}
-      >
-        <label
-          className={styles.contactsForm__label}
-        >
-          Ваш Email
-          {emailIsDirty && emailError && (
-            <p className={styles.contactsForm__emailErrortxt}>
-              {emailError}
-            </p>
-          )}
-        </label>
-        <input 
-          type="email" 
-          placeholder="Enter email"
-          value={email}
-          onChange={(e) => {
-            emailHandler(e.target.value);
-          }}
-          onBlur={() => {
-            setEmailIsDirty(true);
-          }}
-          className={(emailError && emailIsDirty) ? styles.contactsForm__emailErrorInput : styles.contactsForm__input}
-        />
-      </div>
+    > 
+      <ContactsFormInputBlock
+        placeholder={`Ім'я`}
+        value={name}
+        onChange={changeName}
+        required={true}
+        label={`Ім'я`}
+        type="text"
+      />
+      <ContactsFormInputBlock
+        placeholder='Телефон'
+        value={number}
+        onChange={changePhone}
+        required={true}
+        label='Телефон'
+        type='phone'
+      />
+      <ContactFormInputEmail 
+        emailError={emailError}
+        emailIsDirty={emailIsDirty}
+        email={email}
+        emailHandler={emailHandler}
+        setEmailIsDirty={setEmailIsDirty}
+      />
       <div className={styles.contactsForm__row}>
         <label
           className={styles.contactsForm__label}

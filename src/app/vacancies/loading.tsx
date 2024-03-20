@@ -2,7 +2,7 @@ import React from 'react';
 import ContentLoader from "react-content-loader";
 import styles from './loading.module.scss';
 
-export default function LoadingAbout() {
+export default function LoadingVacancies() {
   return (
     <div className='container'>
       <div className={styles.loading__title}>

@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { url } from '@/api';
 import { useNormalizeProducts } from '../../hooks/useNormalizeProducts';
@@ -7,6 +7,7 @@ import styles from './cart.module.scss';
 import { clearCart } from '@/redux/slices/productSlice';
 import { RootState } from '@/redux/store';
 import { useSession } from 'next-auth/react';
+import { CartFormInputBlock } from './CartFormInputBlock';
 
 interface Props {
   setFilled: Dispatch<SetStateAction<boolean>>;
@@ -32,6 +33,22 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
     dispatch(clearCart());
   }
 
+  function changeName(e: any) {
+    setName(e.target.value);
+  }
+
+  function changePhone(e: any) {
+    if (!isNaN(+e.target.value)) {
+      if (e.target.value.length <= 13) {
+        setPhone(e.target.value);
+      }
+    }
+  }
+
+  function changeAddress(e: any) {
+    setAddress(e.target.value);
+  }
+
   return (
     <form 
       className={styles.cart__form} 
@@ -39,68 +56,31 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
         e.preventDefault();
         sendData({name, phone, address, products, email: session?.user?.user.email || null }, `${url}/orders`, submit);
       }}
-    >
-      <div 
-        className={styles.cart__formRow}
-      >
-        <label
-          className={styles.cart__formLabel}
-        >
-          Ім&apos;я
-        </label>
-        <input 
-          type="text" 
-          placeholder="Ім'я"
-          required
-          value={name}
-          className={styles.cart__input}
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
-        />
-      </div>
-      <div 
-        className={styles.cart__formRow}
-      >
-        <label
-          className={styles.cart__formLabel}
-        >
-          Телефон
-        </label>
-        <input 
-          type="phone"
-          placeholder="Телефон"
-          required
-          className={styles.cart__input}
-          value={phone} 
-          onChange={(e) => {
-            if (!isNaN(+e.target.value)) {
-              if (e.target.value.length <= 13) {
-                setPhone(e.target.value);
-              }
-            }
-          }}
-        />
-      </div>
-      <div 
-        className={styles.cart__formRow}
-      >
-        <label
-          className={styles.cart__formLabel}
-        >
-          Адреса
-        </label>
-        <input 
-          type="text" 
-          placeholder="Адреса"
-          className={styles.cart__input}
-          required
-          value={address} 
-          onChange={(e) => {
-            setAddress(e.target.value);
-          }}
-        />
-      </div>
+    > 
+      <CartFormInputBlock
+        placeholder={`Ім'я`}
+        value={name}
+        onChange={changeName}
+        required={true}
+        label={`Ім'я`}
+        type="text"
+      />
+      <CartFormInputBlock
+        placeholder='Телефон'
+        value={phone}
+        onChange={changePhone}
+        required={true}
+        label='Телефон'
+        type='phone'
+      />
+      <CartFormInputBlock
+        placeholder='Адреса'
+        value={address}
+        onChange={changeAddress}
+        required={true}
+        label='Адреса'
+        type='text'
+      />
       <div className={styles.cart__buttonWrapper}>
       <button
         type="submit"

@@ -3,8 +3,6 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './place.module.scss';
 
-
-
 interface Props {
   place: PlaceInterface
 }
