@@ -6,7 +6,7 @@ import React from 'react';
 import { OrderTable } from './OrderTable';
 import styles from './order.module.scss';
 import { ChangeStatus } from './ChangeStatus';
-import { MyModal } from '@/components/ui/myModal/MyModal';
+import { MyModal } from '../../ui/myModal/MyModal';
 
 export const Order: React.FC <any> = ({ id }) => {
   const [active, setActive] = React.useState(false);
