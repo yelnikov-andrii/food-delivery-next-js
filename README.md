@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Food Delivery Website
 
-## Getting Started
+Цей проект - це веб-сайт доставки їжі, розроблений з використанням React, Next js та Node.js, Express js. Сайт дозволяє користувачам переглядати меню ресторану, робити замовлення онлайн та відстежувати статус доставки. Крім того, він підтримує реєстрацію користувачів та зберігання їх улюблених страв.
 
-First, run the development server:
+## Функції
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Перегляд меню ресторанів
+- Онлайн-замовлення
+- Статус виконання замовлення
+- Реєстрація та управління обліковим записом
+- Збереження улюблених страв
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Технології
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Next для клієнтської частини
+- Express.js для серверної частини
+- Postgres для зберігання даних
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Як почати
 
-## Learn More
+1. Клонуйте репозиторій.
+2. Встановіть залежності за допомогою `npm install`.
+3. Запустіть клієнтську частину за допомогою `npm run client`.
 
-To learn more about Next.js, take a look at the following resources:
+Будь ласка, переконайтеся, що ви маєте встановлені Node.js та MongoDB перед запуском цього проекту.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
