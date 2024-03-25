@@ -1,7 +1,6 @@
 const path = require('path')
  
 module.exports = {
-  reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
@@ -23,6 +22,14 @@ module.exports = {
         pathname: '/assets/**',
       },
     ],
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, './'),
+    };
+
+    return config;
   },
 }
 
