@@ -1,7 +1,7 @@
 'use client';
 import { useOrders } from '@/api/services/orders/useOrders';
 import React from 'react'
-import { Loading } from '../../ui/loading/Loading';
+import { Loading } from '@/components/ui/loading/Loading';
 import Link from 'next/link';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
