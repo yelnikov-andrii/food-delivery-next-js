@@ -1,7 +1,6 @@
 /* eslint-disable react/display-name */
 'use client';
 import { useActivate } from '@/api/services/auth/useActivate';
-import axios from 'axios';
 import React from 'react'
 
 export const ActivationPage = React.memo(({ activationToken }: { activationToken: string }) => {
