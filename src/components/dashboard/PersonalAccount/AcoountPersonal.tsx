@@ -1,7 +1,7 @@
 'use client';
 import { useOrders } from '@/api/services/orders/useOrders';
 import React from 'react'
-import { Loading } from '@/components/ui/loading/Loading';
+import { Loading } from '@/components/ui/Loading/Loading';
 import Link from 'next/link';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
@@ -18,7 +18,8 @@ export const AcoountPersonal = () => {
       <div className={styles.account}>
       <h5 className='personalAccount__ordersTitle'>
         {ordersNormalized && ordersNormalized.length > 0 
-          ? 'Ваші замовлення' : ordersLoading === true ? 'Завантаження' : 'Замовлень немає'}
+          ? 'Ваші замовлення' : ordersLoading === true 
+          ? 'Завантаження' : 'Замовлень немає'}
       </h5>
       {ordersLoading === true ? (
         <Loading />
