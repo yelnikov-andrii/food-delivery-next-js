@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../headernav.module.scss';
-import Dropdown from '../../../ui/myDropdown/Dropdown';
+import Dropdown from '../../../ui/myDropdown/myDropdown';
 import { phones } from '@/data/header';
 
 export const Phones = () => {

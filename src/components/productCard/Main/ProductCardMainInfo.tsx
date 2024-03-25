@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import styles from '../product.module.scss';
-import Dropdown from '../../ui/myDropdown/Dropdown';
+import Dropdown from '../../ui/myDropdown/myDropdown';
 import { ProductInt } from '@/types';
 
 interface Props {
