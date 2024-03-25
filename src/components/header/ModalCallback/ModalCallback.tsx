@@ -3,7 +3,7 @@ import { url } from '../../../api';
 import { useChangeBooleanWithTimeSpan } from '@/hooks/cart/useChangeBooleanWithTimeSpan';
 import { useSendData } from '@/hooks/cart/useSendData';
 import React, { Dispatch, SetStateAction } from 'react'
-import { MyModal } from '../../ui/myModal/MyModal';
+import { MyModal } from '../../ui/myModal/myModal';
 import styles from './modalCallback.module.scss';
 
 interface Props {
