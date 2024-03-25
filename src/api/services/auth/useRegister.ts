@@ -7,8 +7,8 @@ export const useRegister = (onSuccess: () => void) => {
   const [emailErrorRequest, setEmailErrorRequest] = React.useState('');
   const [error, setError] = React.useState('');
 
-  function register({email, password}: UserAuth) {
-    axios.post(`${url}/registration`, {email, password})
+  function register({ email, password }: UserAuth) {
+    axios.post(`${url}/registration`, { email, password })
       .then(response => {
         onSuccess();
       })

@@ -5,7 +5,7 @@ import { url } from '@/api';
 import { useRouter } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 
-export const useOrder = (orderId: any) => {
+export const useOrder = (orderId: number) => {
   const { data: session }: any = useSession();
   const router = useRouter();
   const [order, setOrder] = React.useState<any>();

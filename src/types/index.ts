@@ -72,3 +72,12 @@ export interface VacancyInt {
   img: string;
   name: string;
 }
+
+export interface OrderInterface {
+  id: number;
+  name: string;
+  phone: string;
+  products: ProductAddedInt[];
+  email: string | null;
+  status: string;
+}

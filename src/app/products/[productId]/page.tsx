@@ -2,8 +2,8 @@ import React from 'react';
 import Image from 'next/image';
 import getProductById from '@/app/lib/getProductById';
 import styles from './page.module.scss';
-import { ProductCardMainInfo } from '../../../components/products/product/productCardMainInfo';
-import { ProductAdditionalInfo } from '../../../components/products/product/productAdditionalInfo';
+import { ProductCardMainInfo } from '../../../components/productCard/Main/ProductCardMainInfo';
+import { ProductAdditionalInfo } from '../../../components/productCard/Additional/ProductAdditionalInfo';
 import type { Metadata, ResolvingMetadata } from 'next';
  
 type Props = {

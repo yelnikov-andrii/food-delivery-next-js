@@ -1,11 +1,11 @@
 'use client';
 import React from 'react';
-import { RegistrationSuccess } from './registrationSuccess';
-import { RegistrationEmail } from './registrationEmail';
-import { RegistrationPassword } from './registrationPassword';
-import { RegistrationConfirmPassword } from './registrationConfirmPassword';
-import { useCheckPasswords } from '../../hooks/useCheckPasswords';
-import { usePasswordHandler } from '@/hooks/usePasswordHandler';
+import { RegistrationSuccess } from './Success/RegistrationSuccess';
+import { RegistrationEmail } from './Email/RegistrationEmail';
+import { RegistrationPassword } from './Password/RegistrationPassword';
+import { RegistrationConfirmPassword } from './ConfirmPassword/RegistrationConfirmPassword';
+import { useCheckPasswords } from '../../hooks/form/useCheckPasswords';
+import { usePasswordHandler } from '@/hooks/form/usePasswordHandler';
 import { useRegister } from '@/api/services/auth/useRegister';
 import styles from './registration.module.scss';
 

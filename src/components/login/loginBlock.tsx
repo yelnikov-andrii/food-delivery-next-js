@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 import styles from './login.module.scss';
-import { LoginEmail } from './loginEmail';
-import { LoginPassword } from './loginPassword';
-import { LoginUnauthorized } from './loginUnauthorized';
+import { LoginEmail } from './Email/LoginEmail';
+import { LoginPassword } from './Password/LoginPassword';
+import { LoginUnauthorized } from './UnAuthorized/LoginUnauthorized';
 import { signIn } from 'next-auth/react';
 
 export const LoginBlock = () => {

@@ -1,10 +1,11 @@
+/* eslint-disable react/display-name */
 'use client';
 import { useActivate } from '@/api/services/auth/useActivate';
+import axios from 'axios';
 import React from 'react'
 
-export const ActivationPage = ({ activationToken }: {activationToken: string}) => {
-  const {isActivated, checked, checking} = useActivate(activationToken);
-  
+export const ActivationPage = React.memo(({ activationToken }: { activationToken: string }) => {
+  const { isActivated, checked, checking } = useActivate(activationToken);
   
   if (checking) {
     return (
@@ -17,16 +18,18 @@ export const ActivationPage = ({ activationToken }: {activationToken: string}) =
   } else {
     return (
       <div className='activation'>
-        {checked && isActivated ? (
+        {checked === true && isActivated === true && (
           <h4>
             Акаунт успішно активований
           </h4>
-        ) : (
-          <h4>
-            Користувач вже зареєстрований, або посилання помилкове
-          </h4>
+        )}
+        {checked === true && isActivated === false && (
+            <h4>
+              Користувач вже зареєстрований, або посилання помилкове
+            </h4>
         )}
       </div>
     );
   }
-};
+});
+

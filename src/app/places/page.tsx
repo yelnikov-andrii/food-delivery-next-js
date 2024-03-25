@@ -1,6 +1,6 @@
 import React from 'react';
-import { Place } from '../../components/places/place';
-import { arrPlaces } from '@/data/placesData';
+import { Place } from '../../components/places/Place';
+import { arrPlaces } from '@/data/places';
 import styles from './page.module.scss';
 
 export default function Places() {

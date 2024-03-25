@@ -1,0 +1,123 @@
+@import '../../../scss/vars';
+
+.order {
+  padding: 100px 0;
+
+  &__header {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin: 0 0 20px 0;
+  }
+
+  &__address {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__status {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__changeStatus {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__input {
+    padding: 5px 10px;
+  }
+
+  &__size {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__souse {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid $primaryColor;
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__tableRow {
+    td {
+      padding: 8px;
+      border: 1px solid $primaryColor;
+    }
+  }
+
+  &__tableHeadRow {
+    th {
+      border: 1px solid $primaryColor;
+      padding: 8px;
+    }
+  }
+
+  &__photo {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  &__tablePrice {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__imageWrapper {
+    width: 100px;
+    margin: 0 0 10px 0;
+  }
+
+  &__img {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__sum {
+    font-weight: 700;
+    font-size: 24px;
+    color: $primaryColor;
+    margin: 0 0 50px 0;
+  }
+
+  &__goBack {
+    display: block;
+    margin: 20px 0;
+    font-size: 24px;
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__button {
+    max-width: 400px;
+    height: 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background: lighten($secondaryColor, 10%);
+      color: $hoverColor;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+  }
+}

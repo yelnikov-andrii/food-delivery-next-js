@@ -1,5 +1,5 @@
 import React from 'react';
-import { Vacancy } from '../../components/vacancies/vacancy';
+import { Vacancy } from '../../components/vacancies/Vacancy';
 import { arrVacancies } from '@/data/vacancies';
 import styles from './page.module.scss';
 

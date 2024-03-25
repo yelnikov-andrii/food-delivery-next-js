@@ -1,6 +1,6 @@
 import React from 'react'
 import { ContactsBlock } from '@/components/contacts/ContactsBlock';
-import { ContactsBlockForm } from '@/components/contacts/contactsBlockForm';
+import { ContactsBlockForm } from '@/components/contacts/Form/ContactsBlockForm';
 import styles from './page.module.scss';
 
 export default function Contacts() {

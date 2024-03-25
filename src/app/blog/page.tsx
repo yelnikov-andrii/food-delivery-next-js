@@ -1,6 +1,6 @@
 import React from 'react';
-import BlogArticle from '../../components/blog/article';
-import { blogArr } from '@/data/blogData';
+import BlogArticle from '@/components/blog/Article';
+import { blogArr } from '@/data/blog';
 import styles from './page.module.scss';
 
 export default function page() {

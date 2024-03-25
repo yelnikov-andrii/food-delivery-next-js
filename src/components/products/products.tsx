@@ -1,16 +1,17 @@
 'use client';
 import React from 'react';
-import { useRequest } from '@/hooks/useRequest';
+import { useRequest } from '@/hooks/request/useRequest';
 import styles from './products.module.scss';
-import { Search } from '../ui/searchBlock/search';
-import { TypeList } from '../ui/typeList/typeList';
-import { useInput } from '@/hooks/useInput';
-import { useSortAndSearchProducts } from '@/hooks/useSortProducts';
-import { useGetProducts } from '@/hooks/useGetProducts';
-import { ProductsError } from './ProductsError';
-import { ProductsLoadMore } from './ProductsLoadMore';
-import { FoundOrNotFoundProducts } from './FoundOrNotFoundProducts';
-import { sortOptions } from '@/data/mainData';
+import { Search } from '../ui/searchBlock/Search';
+import { TypeList } from '../ui/typeList/TypeList';
+import { useInput } from '@/hooks/form/useInput';
+import { useSortAndSearchProducts } from '@/hooks/products/useSortProducts';
+import { useGetProducts } from '@/hooks/products/useGetProducts';
+import { ProductsError } from './Error/ProductsError';
+import { ProductsLoadMore } from './LoadMore/ProductsLoadMore';
+import { FoundOrNotFoundProducts } from './FoundOrNotFound/FoundOrNotFoundProducts';
+import { sortOptions } from '@/data/main';
+import { LoadingProducts } from '../ui/loadingProducts/LoadingProducts';
 
 interface Props {
   typeId: number;
@@ -40,6 +41,12 @@ export const Products: React.FC <Props> = ({ typeId, productCategories, name }) 
         error={error}
       />
     );
+  }
+
+  if (loading) {
+    return (
+      <LoadingProducts />
+    )
   }
 
   return (

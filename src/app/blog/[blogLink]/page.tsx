@@ -1,4 +1,4 @@
-import { blogArr } from '@/data/blogData';
+import { blogArr } from '@/data/blog';
 import Image from 'next/image';
 import React from 'react';
 import styles from './page.module.scss';

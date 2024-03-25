@@ -1,8 +1,8 @@
 import getProductsByCategory from './lib/getProductsByCategory';
-import Categories from '../components/main/categories';
-import { MainProduct } from '../components/main/mainProduct';
-import { Product } from '../components/products/product';
-import { categoriesArr } from '@/data/footerData';
+import Categories from '../components/main/Categories/Categories';
+import { MainProduct } from '../components/main/Product/MainProduct';
+import { Product } from '../components/products/FoundOrNotFound/Product';
+import { categoriesArr } from '@/data/footer';
 
 export default async function Home() {
   const pizzas = await getProductsByCategory(1);

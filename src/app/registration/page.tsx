@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './page.module.scss';
-import { RegistrationBlock } from '../../components/registration/registrationBlock';
+import { RegistrationBlock } from '../../components/registration/RegistrationBlock';
 
 export default function Registration() {
   return (

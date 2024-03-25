@@ -8,21 +8,29 @@ export const useActivate = (activationToken: string) => {
   const [checking, setChecking] = React.useState(false);
   const [checked, setChecked] = React.useState(false);
 
-  React.useEffect(() => {
-    setChecking(true);
-    axios.get(`${url}/activation/${activationToken}`)
-      .then(response => {
-        localStorage.setItem('accessToken', response.data.accessToken);
-        setIsActivated(true);
-      })
-      .catch((e) => {
-        setIsActivated(false);
-      })
-      .finally(() => {
-        setChecking(false);
-        setChecked(true);
-      });;
-  }, []);
+  const prevActivationTokenRef = React.useRef<string | null>(null);
 
-  return {isActivated, checked, checking};
+  React.useEffect(() => {
+    if (activationToken !== prevActivationTokenRef.current) {
+      if (!activationToken) return;
+
+      setChecking(true);
+      axios.get(`${url}/activation/${activationToken}`)
+        .then(response => {
+          localStorage.setItem('accessToken', response.data.accessToken);
+          setIsActivated(true);
+        })
+        .catch((e) => {
+          setIsActivated(false);
+        })
+        .finally(() => {
+          setChecking(false);
+          setChecked(true);
+        });
+
+      prevActivationTokenRef.current = activationToken;
+    }
+  }, [activationToken]);
+
+  return { isActivated, checked, checking };
 };

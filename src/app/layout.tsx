@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import  Header from '../components/header/page';
-import Footer from '../components/footer/page';
+import  Header from '../components/header/Header';
+import Footer from '../components/footer/Footer';
 import styles from './layout.module.scss';
 import { Providers } from '@/components/providers/Provider';
 import { UpButton } from '@/components/ui/upbutton/UpButton';
