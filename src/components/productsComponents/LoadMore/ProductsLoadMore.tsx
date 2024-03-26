@@ -1,5 +1,5 @@
 import React from 'react'
-import { LoadingProducts } from '../../ui/loadingProducts/LoadingProducts'
+import { LoadingProducts } from '../../ui/loadingProductsComponents/LoadingProducts'
 import { LoadMore } from '../../ui/loadMore/LoadMore';
 import styles from '../products.module.scss';
 

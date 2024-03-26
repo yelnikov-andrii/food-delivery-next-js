@@ -11,7 +11,7 @@ import { ProductsError } from './Error/ProductsError';
 import { ProductsLoadMore } from './LoadMore/ProductsLoadMore';
 import { FoundOrNotFoundProducts } from './FoundOrNotFound/FoundOrNotFoundProducts';
 import { sortOptions } from '@/data/main';
-import { LoadingProducts } from '../ui/loadingProducts/LoadingProducts';
+import { LoadingProducts } from '../ui/loadingProductsComponents/LoadingProducts';
 
 interface Props {
   typeId: number;
