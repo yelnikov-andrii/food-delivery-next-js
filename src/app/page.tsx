@@ -1,7 +1,7 @@
 import getProductsByCategory from './lib/getProductsByCategory';
 import Categories from '../components/main/Categories/Categories';
 import { MainProduct } from '../components/main/Product/MainProduct';
-import { Product } from '../components/products/FoundOrNotFound/Product';
+import { Product } from '../components/productsComponents/FoundOrNotFound/Product';
 import { categoriesArr } from '@/data/footer';
 
 export default async function Home() {
