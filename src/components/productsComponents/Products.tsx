@@ -2,7 +2,7 @@
 import React from 'react';
 import { useRequest } from '@/hooks/request/useRequest';
 import styles from './products.module.scss';
-import { Search } from '../ui/searchBlock/Search';
+import { Search } from '../ui/searchBlockComponents/Search';
 import { TypeList } from '../ui/typeList/TypeList';
 import { useInput } from '@/hooks/form/useInput';
 import { useSortAndSearchProducts } from '@/hooks/products/useSortProducts';

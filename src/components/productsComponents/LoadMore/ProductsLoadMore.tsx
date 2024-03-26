@@ -1,6 +1,6 @@
 import React from 'react'
 import { LoadingProducts } from '../../ui/loadingProductsComponents/LoadingProducts'
-import { LoadMore } from '../../ui/loadMore/LoadMore';
+import { LoadMore } from '../../ui/loadMoreComponents/LoadMore';
 import styles from '../products.module.scss';
 
 interface Props {
