@@ -4,7 +4,7 @@ import  Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import styles from './layout.module.scss';
 import { Providers } from '@/components/providers/Provider';
-import { UpButton } from '@/components/ui/upbutton/UpButton';
+import { UpButton } from '@/components/ui/upbuttonComponents/UpButton';
 
 export const metadata: Metadata = {
   title: 'Food delivery',
