@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import { ActivationPage } from './ActivationPage';
 
-export const ActivationPageWrapper = ({ activationToken }: {activationToken: string}) => {
+export const ActivationWrapper = ({ activationToken }: {activationToken: string}) => {
   return (
     <div>
       <Provider store={store}>
