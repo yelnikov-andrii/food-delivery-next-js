@@ -1,0 +1,43 @@
+@import '../../../../scss/vars.scss';
+
+.cart {
+  position: relative;
+  padding: 0 20px 0 0;
+
+  &--count {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #000;
+    background-color: $hoverColor;
+    position: absolute;
+    top: -10px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+
+    @media (max-width: 1200px) {
+      right: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  color: $primaryColor;
+  cursor: pointer;
+
+  &:hover {
+    color: $hoverColor;
+  }
+}

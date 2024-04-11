@@ -5,6 +5,7 @@ import { Login } from './Login';
 
 export const Auth = () => {
   const { data: session }: any = useSession();
+  
   return (
     <>
     {session && session.user ? (

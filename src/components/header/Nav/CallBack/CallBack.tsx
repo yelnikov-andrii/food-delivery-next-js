@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../headernav.module.scss';
+import styles from './callback.module.scss';
 
 interface Props {
   handleShow: () => void;
@@ -7,10 +7,10 @@ interface Props {
 
 export const CallBack: React.FC<Props> = ({ handleShow }) => {
   return (
-    <div className={styles.headerNav__row}>
+    <div className={styles.callback}>
       <button 
         onClick={handleShow}
-        className={styles.headerNav__button}
+        className={styles.callback__button}
       >
         Замовити дзвінок
       </button>

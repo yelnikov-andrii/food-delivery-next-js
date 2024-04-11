@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../headernav.module.scss';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
+import styles from './auth.module.scss';
 
 interface CallBackInt {
   callbackUrl: string;
@@ -15,27 +15,27 @@ export const ButtonsAuthorized: React.FC<Props> = ({ signOut }) => {
   const { data: session }: any = useSession();
 
   return (
-    <div className={styles.headerNav__auth}>
+    <div className={styles.auth}>
       <a 
         onClick={(e) => {
           signOut({
             callbackUrl:'/'
           });
         }}
-        className={styles.headerNav__link}
+        className={styles.auth__link}
       >
         Вийти
       </a>
       <Link 
         href="/account"
-        className={styles.headerNav__link}
+        className={styles.auth__link}
       >
           Кабінет особистий
       </Link>
       {session && session.user && session?.user?.user.role === 'admin' && (
         <Link 
         href="/admin"
-        className={styles.headerNav__link}
+        className={styles.auth__link}
       >
           Адмін
       </Link>

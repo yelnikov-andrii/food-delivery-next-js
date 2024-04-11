@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import styles from '../headernav.module.scss';
+import styles from './mainlink.module.scss';
 
 interface Props {
   setMenuOpen: Dispatch<SetStateAction<boolean>>;
@@ -8,16 +8,16 @@ interface Props {
 export const CloseButton: React.FC <Props> = ({ setMenuOpen }) => {
   return (
     <div 
-      className={styles.headerNav__close}
+      className={styles.mainlink__closeBlock}
     >
       <div 
         onClick={() => {
           setMenuOpen(false);
         }}
-        className={styles.headerNav__closeButton}
+        className={styles.mainlink__closeButton}
       >
-        <span className={styles.headerNav__closeButtonSpan}></span>
-        <span className={styles.headerNav__closeButtonSpan}></span>
+        <span className={styles.mainlink__closeButtonSpan}></span>
+        <span className={styles.mainlink__closeButtonSpan}></span>
       </div>
     </div>
   )

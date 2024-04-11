@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from '../headernav.module.scss';
 import Image from 'next/image';
-import user from '../../../../../public/user.svg'
+import user from '../../../../../public/user.svg';
+import styles from './auth.module.scss';
 
 interface Props {
   signIn: () => void;
@@ -13,7 +13,7 @@ export const Login: React.FC<Props> = ({ signIn }) => {
       onClick={() => {
         signIn()
       }}
-      className={styles.headerNav__link}
+      className={styles.auth__link}
     >
       <Image 
         src={user}

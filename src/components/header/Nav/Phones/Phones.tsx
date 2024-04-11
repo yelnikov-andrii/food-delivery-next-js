@@ -1,22 +1,22 @@
 import React from 'react';
-import styles from '../headernav.module.scss';
 import Dropdown from '../../../ui/myDropdown/myDropdown';
 import { phones } from '@/data/header';
+import styles from './phones.module.scss';
 
 export const Phones = () => {
   return (
-    <div className={styles.headerNav__row}>
+    <div className={styles.phones}>
       <Dropdown
         buttonContent='Телефони'
       >
         {phones.map((phone) => (
-            <a 
-              href={`tel:${phone}`} 
-              key={phone}
-              className={styles.headerNav__link}
-            >
-              {phone}
-            </a>
+          <a 
+            href={`tel:${phone}`} 
+            key={phone}
+            className={styles.phones__link}
+          >
+            {phone}
+          </a>
           ))}
       </Dropdown>
     </div>

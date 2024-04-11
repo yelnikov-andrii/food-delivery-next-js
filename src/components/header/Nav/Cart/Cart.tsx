@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../headernav.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import cart from '../../../../../public/cart.svg';
+import styles from './cart.module.scss';
 
 interface Props {
   countOfProducts: number;
@@ -12,9 +12,9 @@ export const Cart: React.FC<Props> = ({ countOfProducts }) => {
   return (
     <Link
       href="/cart"
-      className={styles.headerNav__link}
+      className={styles.link}
     >
-      <div className={styles.headerNav__cart}>
+      <div className={styles.cart}>
         <Image 
           src={cart}
           alt='cart'
@@ -23,7 +23,7 @@ export const Cart: React.FC<Props> = ({ countOfProducts }) => {
         />
         {countOfProducts > 0 && 
         (
-          <span className={styles['headerNav__cart--count']}>
+          <span className={styles['cart--count']}>
             {countOfProducts}
           </span>
         )} 

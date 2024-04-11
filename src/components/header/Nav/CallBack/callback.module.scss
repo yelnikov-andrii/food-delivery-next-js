@@ -1,0 +1,27 @@
+@import '../../../../scss/vars.scss';
+
+.callback {
+  display: flex;
+  align-items: center;
+  
+  @media screen and (max-width: 1200px) {
+    max-width: 120px;
+    margin: 0 auto;
+  }
+
+  &__button {
+    border-radius: 8px;
+    border: 1px solid teal;
+    background: $secondaryColor;
+    color: $primaryColor;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}

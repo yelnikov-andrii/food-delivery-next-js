@@ -91,7 +91,7 @@ export const Product: React.FC <Props> = ({ product, link }) => {
             selectedSouse={selectedSouse}
             showAlert={showAlert}
           />
-          {session.user.user && (
+          {session?.user?.user && (
             <ProductButtonLike />
           )}
         </div>
