@@ -1,13 +1,13 @@
-import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { url } from '@/api';
 import { useNormalizeProducts } from '../../../hooks/cart/useNormalizeProducts';
 import { useSendData } from '../../../hooks/cart/useSendData';
-import styles from '../cart.module.scss';
 import { clearCart } from '@/redux/slices/productSlice';
 import { RootState } from '@/redux/store';
 import { useSession } from 'next-auth/react';
 import { CartFormInputBlock } from './CartFormInputBlock';
+import styles from './form.module.scss';
 
 interface Props {
   setFilled: Dispatch<SetStateAction<boolean>>;
@@ -51,7 +51,7 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
 
   return (
     <form 
-      className={styles.cart__form} 
+      className={styles.form} 
       onSubmit={(e) => {
         e.preventDefault();
         sendData({ name, phone, address, products, email: session?.user?.user.email || null }, `${url}/orders`, submit);
@@ -81,10 +81,10 @@ export const CartForm: React.FC <Props> = ({ setFilled }) => {
         label='Адреса'
         type='text'
       />
-      <div className={styles.cart__buttonWrapper}>
+      <div className={styles.form__buttonWrapper}>
       <button
         type="submit"
-        className={styles['cart__button--send'] + ' ' + styles['cart__button']}
+        className={styles['form__button--send'] + ' ' + styles['form__button']}
       >
         Відправити
       </button>

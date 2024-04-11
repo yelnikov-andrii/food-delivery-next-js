@@ -1,27 +1,27 @@
 import React from 'react';
-import styles from '../cart.module.scss';
+import styles from './table.module.scss';
 
 export const CartTableHead = () => {
 
   return (
-    <thead className={styles.cart__tableHead}>
-      <tr className={styles.cart__tableHeadRow}>
-        <th className={styles.cart__photo}>
+    <thead>
+      <tr className={styles.table__headRow}>
+        <th className={styles.table__headPhoto}>
           Фото
         </th>
         <th>
           Назва
         </th>
-        <th className={styles.cart__size}>
+        <th className={styles.table__size}>
           Розмір
         </th>
-        <th className={styles.cart__souse}>
+        <th className={styles.table__souse}>
           Соус
         </th>
-        <th className={styles.cart__tablePrice}>
+        <th className={styles.table__price}>
           Ціна
         </th>
-        <th className={styles.cart__quantity}>
+        <th className={styles.table__quantity}>
           Кількість
         </th>
         <th>

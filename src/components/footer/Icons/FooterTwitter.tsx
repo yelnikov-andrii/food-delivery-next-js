@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styles from './list.module.scss';
 
 export const FooterTwitter = () => {
   return (
-    <li className="footerList__item">
+    <li className={styles.list__item}>
         <a 
           href="https://www.twitter.com"
-          className="footerList__link footerList__link--tw"
+          className={styles.list__link + ' ' + styles['list__link--tw']}
           target="_blank"
           rel="noreferrer"
         >

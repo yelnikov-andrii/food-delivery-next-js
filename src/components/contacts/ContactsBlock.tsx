@@ -5,7 +5,7 @@ import { ContactsBlockItem } from './BlockItem/ContactBlockItem';
 
 export const ContactsBlock = () => {
   return (
-    <div className={styles.contactsBlock}>
+    <div className={styles.contacts}>
       <ContactsBlockItem contact={contactsArr[0]}/>
       <ContactsBlockItem contact={contactsArr[1]}/>
       <ContactsBlockItem contact={contactsArr[2]}/>

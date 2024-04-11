@@ -6,12 +6,10 @@ import Link from 'next/link';
 import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import styles from './account.module.scss';
-import { useSession } from 'next-auth/react';
 
 
 export const AcoountPersonal = () => {
   const { ordersNormalized, ordersError, ordersLoading } = useOrders();
-  const { data: session }: any = useSession();
 
   return (
     <Provider store={store}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../contacts.module.scss';
+import styles from './form.module.scss';
 
 interface Props {
   label: string;
@@ -13,10 +13,10 @@ interface Props {
 export const ContactsFormInputBlock: React.FC <Props> = ({ label, placeholder, required, value, onChange, type }) => {
   return (
     <div 
-        className={styles.contactsForm__row}
+        className={styles.form__row}
       >
         <label
-          className={styles.contactsForm__label}
+          className={styles.form__label}
         >
           {label}
         </label>
@@ -25,7 +25,7 @@ export const ContactsFormInputBlock: React.FC <Props> = ({ label, placeholder, r
           placeholder={placeholder}
           required={required}
           value={value}
-          className={styles.contactsForm__input}
+          className={styles.form__input}
           onChange={(e) => {
             onChange(e)
           }}

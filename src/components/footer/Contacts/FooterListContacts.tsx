@@ -1,12 +1,13 @@
 import { contacts } from '@/data/footer';
-import React from 'react'
+import React from 'react';
+import styles from './list.module.scss';
 
 export default function FooterListContacts() {
   return (
-    <ul className="footerList">
+    <ul className={styles.list}>
       {contacts.map((contact) => (
         <li 
-          className="footerList__item" 
+          className={styles.list__item} 
           key={contact}
         >
           <a 
@@ -14,15 +15,15 @@ export default function FooterListContacts() {
               ? `tel: ${contact}` 
               : contact[0] === 'p' 
                 ? `mailto: ${contact}` 
-                : contact} className="footerList__link"
+                : contact} className={styles.list__link}
           >
             {contact}
           </a>
         </li>
       ))}
-      <li className="footerList__item">
+      <li className={styles.list__item}>
         <a 
-          className="footerList__link" 
+          className={styles.list__link} 
           href="https://goo.gl/maps/WZ9wufaczsi7AFSi7" 
           target="_blank"
           rel="noreferrer"
@@ -30,9 +31,9 @@ export default function FooterListContacts() {
           м.Харків, вул. Героїв Харкова 298
         </a>
       </li>
-      <li className="footerList__item">
+      <li className={styles.list__item}>
         <a 
-          className="footerList__link" 
+          className={styles.list__link} 
           href="https://goo.gl/maps/6j4hGFrotNwsfjLN6" 
           target="_blank"
           rel="noreferrer"

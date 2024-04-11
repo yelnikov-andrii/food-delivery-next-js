@@ -1,27 +1,27 @@
 'use client';
 import React from 'react';
 import { useChangeBooleanWithTimeSpan } from '@/hooks/cart/useChangeBooleanWithTimeSpan';
-import styles from '../contacts.module.scss';
 import { ContactsForm } from './ContactsForm';
+import styles from './form.module.scss';
 
 export const ContactsBlockForm: React.FC = () => {
   const [formSubmitted, setFormSubmitted]: any = useChangeBooleanWithTimeSpan(false, false, 3000);
 
   return (
-    <div className={styles.contactsBlockForm}>
-      <div className={styles.contactsBlockForm__wrapper}>
-        <p className={styles.contactsBlockForm__title}>
+    <div className={styles.block}>
+      <div className={styles.block__wrapper}>
+        <p className={styles.block__title}>
           Зворотній зв&apos;язок
         </p>
         {formSubmitted === false ? (
           <ContactsForm setFormIsSubmitted={setFormSubmitted} />
         ) : (
-          <div className={styles.contactsBlockForm__submitted}>
+          <div className={styles.block__submitted}>
             Дякуємо за звернення! Найближчим часом ми зв&apos;яжемося з Вами
           </div>
         )}
       </div>
-      <div className={styles.contactsBlockForm__map}>
+      <div className={styles.block__map}>
         <iframe 
           src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!
           1d2568.256810085524!2d36.425417584130834!3d49.93152236723981!
@@ -33,7 +33,7 @@ export const ContactsBlockForm: React.FC = () => {
           height="350" 
           loading="lazy" 
           title="title" 
-          className={styles.contactsBlockForm__frame}>
+          className={styles.block__frame}>
         </iframe>
       </div>
     </div>

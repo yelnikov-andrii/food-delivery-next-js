@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../cart.module.scss';
+import styles from './form.module.scss';
 
 interface Props {
   label: string;
@@ -13,10 +13,10 @@ interface Props {
 export const CartFormInputBlock: React.FC <Props> = ({ label, placeholder, required, value, onChange, type }) => {
   return (
     <div 
-        className={styles.cart__formRow}
+        className={styles.form__row}
       >
         <label
-          className={styles.cart__formLabel}
+          className={styles.form__label}
         >
           {label}
         </label>
@@ -25,7 +25,7 @@ export const CartFormInputBlock: React.FC <Props> = ({ label, placeholder, requi
           placeholder={placeholder}
           required={required}
           value={value}
-          className={styles.cart__input}
+          className={styles.form__input}
           onChange={(e) => {
             onChange(e)
           }}

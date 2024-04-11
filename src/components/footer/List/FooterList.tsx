@@ -1,18 +1,19 @@
 import { Category } from '@/types'
 import Link from 'next/link'
-import React from 'react'
+import React from 'react';
+import styles from './list.module.scss';
 
 export default function FooterList({ arr }: {arr: Category[]}) {
   return (
-    <ul className="footerList">
+    <ul className={styles.list}>
       {arr.map((item: Category) => (
         <li 
-          className="footerList__item" 
+          className={styles.list__item} 
           key={item.id}
         >
           <Link 
             href={item.link} 
-            className="footerList__link"
+            className={styles.list__link}
           >
             {item.name}
           </Link>

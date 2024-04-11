@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ContactsList } from './ContactsList';
 import { Contact } from '@/types';
-import styles from '../contacts.module.scss';
+import styles from './block.module.scss';
 
 interface Props {
   contact: Contact;
@@ -10,11 +10,11 @@ interface Props {
 
 export const ContactsBlockItem: React.FC <Props> = ({ contact }) => {
   return (
-    <div className={styles.contactsBlockItem}>
+    <div className={styles.block}>
       <Image 
         src={contact.img} 
         alt=""
-        className={styles.contactsBlockItem__img}
+        className={styles.block__img}
         width={100}
         height={100}
       />

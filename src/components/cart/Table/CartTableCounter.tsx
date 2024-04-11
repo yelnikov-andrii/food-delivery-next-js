@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import styles from '../cart.module.scss';
+import styles from './table.module.scss';
 import { decrement, increment, removeProduct } from '@/redux/slices/productSlice';
 import { ProductAddedInt } from '@/types';
 
@@ -11,9 +11,9 @@ interface Props {
 export const CartTableCounter: React.FC <Props> = ({product}) => {
   const dispatch = useDispatch();
   return (
-    <div className={styles.cart__quantity}>
+    <div className={styles.table__quantity}>
       <button
-        className={styles.cart__button}
+        className={styles.table__button}
         onClick={(e) => {
           e.preventDefault();
           if (product.quantity === 1) {
@@ -29,7 +29,7 @@ export const CartTableCounter: React.FC <Props> = ({product}) => {
         {product.quantity}
       </span>
       <button 
-        className={styles.cart__button}
+        className={styles.table__button}
         onClick={(e) => {
           e.preventDefault();
           dispatch(increment(product.id));

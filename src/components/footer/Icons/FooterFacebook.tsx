@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styles from './list.module.scss';
 
 export const FooterFacebook = () => {
   return (
-    <li className="footerList__item">
+    <li className={styles.list__item}>
       <a
         href="https://www.facebook.com"
-        className="footerList__link footerList__link--fb"
+        className={styles.list__link + ' ' + styles['list__link--fb']}
         target="_blank"
         rel="noreferrer"
       >

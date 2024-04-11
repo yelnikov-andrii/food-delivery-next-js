@@ -1,11 +1,11 @@
 'use client';
 import React, {Dispatch, SetStateAction} from 'react';
 import { useEmailHandler } from '@/hooks/form/useEmailHandler';
-import styles from '../contacts.module.scss';
 import { useSendData } from '@/hooks/cart/useSendData';
 import { url } from '@/api';
 import { ContactsFormInputBlock } from './ContactsFormInputBloc';
 import { ContactFormInputEmail } from './ContactFormInputEmail';
+import styles from './form.module.scss';
 
 interface Props {
   setFormIsSubmitted: Dispatch<SetStateAction<boolean>>;
@@ -42,7 +42,7 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
 
   return (
     <form 
-      className={styles.contactsForm} 
+      className={styles.form}
       onSubmit={(e) => {
         e.preventDefault();
         sendData({name, number, email, message}, `${url}/feedback`, submit);
@@ -71,9 +71,9 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
         emailHandler={emailHandler}
         setEmailIsDirty={setEmailIsDirty}
       />
-      <div className={styles.contactsForm__row}>
+      <div className={styles.form__row}>
         <label
-          className={styles.contactsForm__label}
+          className={styles.form__label}
         >
           Повідомлення
         </label>
@@ -83,12 +83,12 @@ export const ContactsForm: React.FC <Props> = ({ setFormIsSubmitted }) => {
           onChange={(e) => {
             setMessage(e.target.value);
           }}
-          className={styles.contactsForm__textarea}
+          className={styles.form__textarea}
         />
       </div>
       <button
         type="submit"
-        className={styles.contactsForm__button}
+        className={styles.form__button}
       >
         Відправити
       </button>

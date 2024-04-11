@@ -1,17 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '../cart.module.scss';
+import styles from './empty.module.scss';
 
 export const CartEmpty: React.FC = () => {
 
   return (
-    <div className={styles.cart}>
-      <h2 className={styles.cart__h2}>
+    <>
+      <h2 className={styles.empty__h2}>
         Ваш кошик порожній
       </h2>
-      <div className={styles.cart__emptyBox}>
-        <div className={styles.cart__imageWrapper}>
+      <div className={styles.empty__box}>
+        <div className={styles.empty__imageWrapper}>
         <Image 
           src="https://pizzalife.ua/templates/main/wp-content/uploads/2019/04/demo1-0939697612-1.jpg"
           alt=""
@@ -22,11 +22,11 @@ export const CartEmpty: React.FC = () => {
         </div>
         <Link 
           href="/"
-          className={styles.cart__goBack}
+          className={styles.empty__goBack}
         >
           На головну
         </Link>
       </div>
-    </div>
+    </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import styles from '../contacts.module.scss';
+import styles from './form.module.scss';
 
 interface Props {
   emailError: string;
@@ -12,14 +12,14 @@ interface Props {
 export const ContactFormInputEmail: React.FC <Props> = ({ emailError, emailIsDirty, email, emailHandler, setEmailIsDirty }) => {
   return (
     <div 
-        className={styles.contactsForm__row}
+        className={styles.form__row}
       >
         <label
-          className={styles.contactsForm__label}
+          className={styles.form__label}
         >
           Ваш Email
           {emailIsDirty && emailError && (
-            <p className={styles.contactsForm__emailErrortxt}>
+            <p className={styles.form__emailErrortxt}>
               {emailError}
             </p>
           )}
@@ -34,7 +34,7 @@ export const ContactFormInputEmail: React.FC <Props> = ({ emailError, emailIsDir
           onBlur={() => {
             setEmailIsDirty(true);
           }}
-          className={(emailError && emailIsDirty) ? styles.contactsForm__emailErrorInput : styles.contactsForm__input}
+          className={(emailError && emailIsDirty) ? styles.form__emailErrorInput : styles.form__input}
         />
       </div>
   )

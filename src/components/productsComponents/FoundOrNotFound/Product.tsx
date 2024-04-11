@@ -12,6 +12,8 @@ import { Provider } from 'react-redux';
 import { store } from '@/redux/store';
 import styles from './product.module.scss';
 import { ProductInt } from '@/types';
+import { useSession } from 'next-auth/react';
+import { ProductButtonLike } from './LikeButton/ProductButtonLike';
 
 interface Props {
   product: ProductInt;
@@ -22,6 +24,8 @@ export const Product: React.FC <Props> = ({ product, link }) => {
   const [selectedSize, setSelectedSize] = React.useState<number>(0);
   const [selectedSouse, setSelectedSouse] = React.useState<number>(0);
   const { show, showAlert } = useAlert();
+  const { data: session }: any = useSession();
+  console.log(session);
 
   return (
     <Provider store={store}>
@@ -80,12 +84,17 @@ export const Product: React.FC <Props> = ({ product, link }) => {
             </strong>
           </p>
         )}
-        <ProductButtonAdd
-          product={product}
-          selectedSize={selectedSize}
-          selectedSouse={selectedSouse}
-          showAlert={showAlert}
-        />
+        <div className={styles.product__buttonAddWrapper}>
+          <ProductButtonAdd
+            product={product}
+            selectedSize={selectedSize}
+            selectedSouse={selectedSouse}
+            showAlert={showAlert}
+          />
+          {session.user.user && (
+            <ProductButtonLike />
+          )}
+        </div>
         <div 
           className={show ? styles.product__alert : styles.product__alert + ' ' + styles['product__alert--hidden']}
         >

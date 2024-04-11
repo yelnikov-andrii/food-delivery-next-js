@@ -1,11 +1,11 @@
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { CartTableCounter } from './CartTableCounter';
-import styles from '../cart.module.scss';
+import styles from './table.module.scss';
 import Image from 'next/image';
 import { removeProduct } from '@/redux/slices/productSlice';
 import { RootState } from '@/redux/store';
-import { ProductAddedInt, ProductInt } from '@/types';
+import { ProductAddedInt } from '@/types';
 
 export const CartTableBody = () => {
   const productsInCart = useSelector((state: RootState) => state.product.products);
@@ -15,9 +15,9 @@ export const CartTableBody = () => {
       {productsInCart.map((product: ProductAddedInt) => (
         <tr
           key={product.id}
-          className={styles.cart__tableRow}
+          className={styles.table__row}
         >
-          <td className={styles.cart__photo}>
+          <td className={styles.table__photo}>
             <Image 
               src={product.img} 
               alt=""
@@ -29,13 +29,13 @@ export const CartTableBody = () => {
           <td>
             {product.name}
           </td>
-          <td className={styles.cart__size}>
+          <td className={styles.table__size}>
             {!product.hasOwnProperty('selectedSize') ? '-' : product.selectedSize === 0 ? '32 см' : '42 см'}
           </td>
-          <td className={styles.cart__souse}>
+          <td className={styles.table__souse}>
             {product.selectedSouse || '-'}
           </td>
-          <td className={styles.cart__tablePrice}>
+          <td className={styles.table__tablePrice}>
             {(product.prices && product.prices[product.selectedSize]) || product.price}
           </td>
           <td>
@@ -46,7 +46,7 @@ export const CartTableBody = () => {
           </td>
           <td>
             <button
-              className={styles.cart__button}
+              className={styles.table__button}
               onClick={(e) => {
                 e.preventDefault();
                 dispatch(removeProduct(product.id));

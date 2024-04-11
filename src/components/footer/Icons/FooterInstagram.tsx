@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import styles from './list.module.scss';
 
 export const FooterInstagram = () => {
   return (
-    <li className="footerList__item">
+    <li className={styles.list}>
       <a 
         href="https://www.instagram.com"
-        className="footerList__link footerList__link--in"
+        className={styles.list__link + ' ' + styles['list__link--in']}
         target="_blank"
         rel="noreferrer"
       >

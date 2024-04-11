@@ -33,7 +33,9 @@ export const CartBlock = () => {
 
   if ((!productsFromStorage.length || !productsInCart.length) && filled === false) {
     return (
-      <CartEmpty />
+      <div className={styles.cart}>
+        <CartEmpty />
+      </div>
     );
   };
   return (
