@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import  Header from '../components/header/Header';
+import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import styles from './layout.module.scss';
-import { Providers } from '@/components/providers/Provider';
 import { UpButton } from '@/components/ui/upbuttonComponents/UpButton';
+import SessionProviderWrapper from '@/components/provider/SessionProviderWrapper';
+import { Analytics } from "@vercel/analytics/react"
 
 export const metadata: Metadata = {
   title: 'Food delivery',
@@ -19,14 +20,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
+        <SessionProviderWrapper>
           <Header />
           <div className={styles.container}>
             {children}
           </div>
           <UpButton />
           <Footer />
-        </Providers>
+          <Analytics />
+        </SessionProviderWrapper>
       </body>
     </html>
   )

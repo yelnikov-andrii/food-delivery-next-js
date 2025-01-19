@@ -1,5 +1,7 @@
 import { Products } from '../../../components/productsComponents/Products';
 import React from 'react';
+import server from 'next/client';
+
 
 export default function Pizzas() {
   return (
