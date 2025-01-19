@@ -25,7 +25,6 @@ export const Product: React.FC <Props> = ({ product, link }) => {
   const [selectedSouse, setSelectedSouse] = React.useState<number>(0);
   const { show, showAlert } = useAlert();
   const { data: session }: any = useSession();
-  console.log(session);
 
   return (
     <Provider store={store}>

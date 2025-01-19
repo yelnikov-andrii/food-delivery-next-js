@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { useRequest } from '@/hooks/request/useRequest';
 import styles from './products.module.scss';

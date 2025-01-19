@@ -19,11 +19,10 @@ export const useAllOrders = () => {
 
       axios.get(`${url}/orders?role=${session.user.user.role || 'user'}`)
       .then(response => {
-        console.log(response)
         setOrders(response.data);
       })
       .catch( (e) => {
-        console.log(e)
+        console.error(e)
       })
       .finally(() => {
         setOrdersLoading(false);
