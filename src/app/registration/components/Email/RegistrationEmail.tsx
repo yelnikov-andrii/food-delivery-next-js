@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { useEmailHandler } from '../../../hooks/form/useEmailHandler';
+import { useEmailHandler } from '@/hooks/form/useEmailHandler';
 import styles from '../registration.module.scss';
 
 interface Props {
