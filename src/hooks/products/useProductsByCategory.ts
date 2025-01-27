@@ -1,5 +1,4 @@
 import { url } from '@/api';
-import { ProductInt } from '@/types/types';
 import axios from 'axios';
 import React, { useState } from 'react';
 

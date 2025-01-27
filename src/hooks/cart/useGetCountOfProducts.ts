@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { RootState } from '@/redux/store';
-import { ProductAddedInt } from '@/types/types';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
