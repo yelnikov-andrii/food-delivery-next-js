@@ -1,4 +1,3 @@
-import { Category } from '@/types/types'
 import Link from 'next/link'
 import React from 'react';
 import styles from './list.module.scss';
