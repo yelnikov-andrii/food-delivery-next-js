@@ -36,7 +36,7 @@ export const Products: React.FC<Props> = ({ products, name, category }) => {
         const categoriesSet = new Set();
 
         for (const product of products) {
-            product?.categories.forEach(category => {
+            product?.categories?.forEach(category => {
                 if (!categoriesSet.has(category)) {
                     categoriesSet.add(category);
                 }
@@ -44,7 +44,10 @@ export const Products: React.FC<Props> = ({ products, name, category }) => {
         }
 
         const arr = Array.from(categoriesSet);
-        arr.unshift('Усі');
+        if (arr?.length) {
+            arr.unshift('Усі');
+        }
+        
         setCategories(arr);
     }
 
