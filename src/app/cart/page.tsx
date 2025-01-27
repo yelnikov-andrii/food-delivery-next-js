@@ -1,5 +1,5 @@
 import React from 'react';
-import { CartBlockWrapper } from '@/components/cart/CartBlockWrapper';
+import { CartBlockWrapper } from './components/CartBlockWrapper';
 
 export default function Cart() {
   return (

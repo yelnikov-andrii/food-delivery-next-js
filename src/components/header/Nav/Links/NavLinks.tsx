@@ -1,5 +1,5 @@
 import { navLinks } from '@/data/header';
-import { NavLink } from '@/types';
+import { NavLink } from '@/types/types';
 import Link from 'next/link';
 import React, { Dispatch, SetStateAction } from 'react';
 import styles from './link.module.scss';

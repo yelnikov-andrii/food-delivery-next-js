@@ -1,0 +1,45 @@
+@import '../../../scss/vars.scss';
+
+.categories {
+    margin-bottom: 50px;
+
+  &__nav {
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+      justify-content: center;
+}
+  }
+
+  &__link {
+    text-decoration: none;
+    display: flex;
+    padding: 5px 10px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    border: 1px solid teal;
+    height: 50px;
+    color: $primaryColor;
+    background: $secondaryColor;
+    max-width: 140px;
+    font-size: 22px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+
+    @media screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+  
+    &:hover {
+      color: $hoverColor;
+      background-color: lighten($secondaryColor, 10%);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

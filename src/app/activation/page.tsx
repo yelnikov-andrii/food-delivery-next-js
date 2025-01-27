@@ -5,7 +5,7 @@ export default function Activation() {
   return (
     <div className={styles.activation}>
       <h1>
-        Activation
+        Активація
       </h1>
     </div>
   )

@@ -1,4 +1,4 @@
-import { ProductAddedInt, ProductInt } from '@/types';
+import { ProductAddedInt, ProductInt } from '@/types/types';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 export const productsSlice = createSlice({

@@ -23,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: 48px 0;
 
     @media screen and (max-width: 1024px) {
       gap: 20px;

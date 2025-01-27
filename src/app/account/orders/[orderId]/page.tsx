@@ -1,4 +1,4 @@
-import { Order } from '@/components/dashboard/Orders/Order'
+import { Order } from '../../components/Orders/Order';
 import React from 'react'
 
 export default function OrderPage({ params: { orderId } }: any) {

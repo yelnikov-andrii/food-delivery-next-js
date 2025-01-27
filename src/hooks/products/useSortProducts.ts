@@ -1,4 +1,3 @@
-import { ProductInt } from "@/types";
 import React from "react";
 
 export const useSortAndSearchProducts = (products: ProductInt[], appliedInput: string, selectedOption: string) => {

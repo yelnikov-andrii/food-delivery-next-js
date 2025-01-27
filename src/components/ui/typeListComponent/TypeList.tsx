@@ -1,3 +1,4 @@
+'use client';
 import React, { Dispatch, SetStateAction } from 'react';
 import styles from './typelist.module.scss';
 import clsx from 'clsx';
@@ -9,9 +10,9 @@ interface Props {
   setPage: Dispatch<SetStateAction<number>>;
 }
 
-export const TypeList: React.FC <Props> = ({ setFilterType, filterType, types, setPage }) => {
+export const TypeList: React.FC<Props> = ({ setFilterType, filterType, types, setPage }) => {
   return (
-    <div 
+    <div
       className={styles.typelist}
     >
       {types.map((type: string) => (

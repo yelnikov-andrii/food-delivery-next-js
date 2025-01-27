@@ -1,5 +1,5 @@
 import React from 'react';
-import { Place } from '../../components/placesComponents/Place';
+import { Place } from './components/Place';
 import { arrPlaces } from '@/data/places';
 import styles from './page.module.scss';
 

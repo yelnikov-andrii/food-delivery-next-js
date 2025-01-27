@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { url } from '@/api';
-import { ProductAddedInt, ProductInt } from '@/types';
+import { ProductAddedInt, ProductInt } from '@/types/types';
 import axios from 'axios';
 import React from 'react';
 

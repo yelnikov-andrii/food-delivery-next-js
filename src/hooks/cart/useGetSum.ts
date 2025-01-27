@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { ProductAddedInt } from '@/types';
+import { ProductAddedInt } from '@/types/types';
 import React from 'react';
 
 export const useGetSum = (productsInCart: ProductAddedInt[], initialProducts: ProductAddedInt[] = []) => {

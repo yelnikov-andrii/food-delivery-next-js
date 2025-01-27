@@ -1,0 +1,72 @@
+@import '../../../../scss/vars.scss';
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid $primaryColor;
+  margin: 0 0 20px 0;
+  font-size: 18px;
+  font-weight: 500;
+
+  &__headRow {
+    th {
+      border: 1px solid $primaryColor;
+      padding: 8px;
+    }
+  }
+
+  &__row {
+    td {
+      padding: 8px;
+      border: 1px solid $primaryColor;
+    }
+  }
+
+  &__headPhoto {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__size {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__souse {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__price {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__photo {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  &__button {
+  height: auto;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

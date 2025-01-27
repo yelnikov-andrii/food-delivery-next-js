@@ -1,0 +1,10 @@
+.loading {
+  &__block {
+    display: flex;
+    gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;      
+    }
+  }
+}

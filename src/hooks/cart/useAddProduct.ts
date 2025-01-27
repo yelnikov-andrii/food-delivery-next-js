@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addProduct, increment, incrementWithValue } from '../../redux/slices/productSlice';
-import { ProductAddedInt, ProductInt } from '@/types';
+import { ProductAddedInt, ProductInt } from '@/types/types';
 
 export const useAddProduct = (
   product: ProductInt, selectedSize: number, selectedSouse: number, showAlert: () => void, 

@@ -1,4 +1,4 @@
-import { ProductAddedInt } from '@/types';
+import { ProductAddedInt } from '@/types/types';
 import React from 'react';
 
 export const useNormalizeProducts = (products: ProductAddedInt[]) => {

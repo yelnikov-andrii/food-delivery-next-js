@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogArticle from '@/components/blogComponents/Article';
+import BlogArticle from './components/Article';
 import { blogArr } from '@/data/blog';
 import styles from './page.module.scss';
 

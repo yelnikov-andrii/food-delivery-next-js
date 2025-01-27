@@ -1,4 +1,4 @@
-import { AccountWrapper } from '@/components/dashboard/AccountWrapper';
+import { AccountWrapper } from './components/AccountWrapper';
 import React from 'react';
 
 export default function Account() {

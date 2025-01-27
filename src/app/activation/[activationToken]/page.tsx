@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styles from './activationToken.module.scss';
-import { ActivationWrapper } from '@/components/activation/ActivationWrapper';
+import { ActivationWrapper } from './components/ActivationWrapper';
 
 export default function Activation ({ params: {
   activationToken,
